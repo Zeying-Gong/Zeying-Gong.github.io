@@ -1,570 +1,229 @@
+
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
 
-    <title>Zeying Gong</title>
+<html lang="en">
+<head>
+  <title>Zeying Gong's Personal Homepage</title>
+  <link rel="icon" href="profile-picture.jpeg" type="image/icon type">
 
-    <!--Favicon-->
-    <link rel="icon" type="../image/png" href="img/favicon.png">
-    <!--CSS Links-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/landing.css">
-    <!--Scripts-->
-    <script type="text/javascript" src="js/analytics.js"></script>
-    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+  <style>
+    ul#links li {
+      display:inline;
+      padding: 10px;
+    }
+    a.tlk:link, a.tlk:visited, .tlk {
+    background-color: #3bc987;
+    }
+    .model-box {
+      position:   relative;
+      width:      100%;
+      height: 0;
+      padding-top:   60%; /* This is your aspect ratio */ }
+    .model-prebox {
+      position:   relative;
+      width:      100%;
+      height: 0;
+      padding-top:   40%; /* This is your aspect ratio */ }
+    .model {
+      position: absolute;
+      top:      0;
+      left:     0;
+      bottom:   0;
+      right:    0;
+      width:    100%;
+      height:   100%
+    }
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: gray;
+      color: white;
+      text-align: center;
+    }
+    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+</head>
+<body>
 
-  </head>
 
-  <body>
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
 
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+        <li><span>..</span></li>
+        <li><div style="font-family: 'Copperplate', Verdana, Geneva, Tahoma, sans-serif; font-size: 40px; color: whitesmoke;"><b>Zeying Gong</b></div></li>
+        <li><span>..</span></li>
+        <!-- <li><a href="index.html">Home</a></li> -->
+        <li><a href="#publications" style="font-size: 20px;">Publications</a></li> 
+        <li><a href="https://zeying-gong.github.io/" style="font-size: 20px;">Blog</a></li>
+        <li><a href="Zeying_CV.pdf" target="_blank" style="font-size: 20px;">CV</a></li> 
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+  
+  <!-- Page Content -->
     <div class="container">
-      <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
 
-          <a class="title" href="index.html">Naoki Yokoyama</a>
-          <hr>
-          <a href="#bio">About Me</a> &ensp;
-          <a href="https://drive.google.com/file/d/1j0MELX5lTbUaxXdSLYF2bRDGz9wDlom2/view">CV</a> &ensp;
-          <a href="#research">Research</a> &ensp;
-          <a href="https://github.com/naokiyokoyama">GitHub</a> &ensp;
-          <a href="https://scholar.google.com/citations?user=26MOv8wAAAAJ&hl=en">Google Scholar</a> &ensp;
-          <a href="/portfolio/index.html">Projects</a> &ensp;
-          <a href="photos.html">Photography</a> &ensp;
-          <!-- <a href="#side">Side Projects</a> &ensp; -->
-<!--           <a href="#side">Press Coverage</span> &ensp; -->
-          <br><br>
+        <div class="row">
 
-          <div class="row">
-            <div class="col-md-5">
-              <center>
-                <div class="hidden-xs hidden-sm">
-                  <img src="img/me.JPG" class="featuredimg" width="100%">
-                </div>
-                <div class="visible-xs visible-sm">
-                  <img src="img/me.JPG" class="featuredimg" width="70%">
-                  <br><br>
-                </div>
-              </center>
-            </div>
-            <div class="col-md-7">
+          <!-- Entries Column -->
+          <div class="col-md-3">
+              
+            <!-- Image & Contact Info-->
+              <img class="img-responsive" src="profile-picture.jpeg" height="350" width="350" alt=""><br>
+              <ul id="links">
+                <li><a href="https://github.com/zeying-gong"><i class="fa fa-github fa-2x" aria-hidden="true" style="color:black"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/zeying-gong"><i class="fa fa-linkedin fa-2x" aria-hidden="true" style="color:black"></i></a></li>
+                <li><a href="mailto:zgong313@connect.hkust-gz.edu.cn"><i class="fa fa-envelope fa-2x" aria-hidden="true" style="color:black"></i></a></li>
+                <li><a href="https://twitter.com/KungRikhard"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color:black"></i></a></li>
+              </ul>
+              <!-- <div style="margin-top:3%; text-align:justify;">       -->
               <p>
-                Ph.D. Student in Robotics at Georgia Tech<br>
-                Atlanta, GA<br>
+              <dd><a href="https://www.zhihu.com/people/feng-ge-hua-93">Zhihu</a></dd> 
+              <dd><a href="https://scholar.google.com/citations?user=ze2Wh9EAAAAJ" target="_blank">Google Scholar</a></dd>
+              <div itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0009-0000-9591-5358" href="https://orcid.org/0009-0000-9591-5358" target="orcid.widget" rel="me noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">0000-0002-1379-8539</a></div>
+              <!-- <dd><a href="files/Zeying_CV_20231014.pdf" target="_blank">Download CV</a></dd> -->
+              </p>     
+          </div>
+
+          <!-- Main Info -->
+          <div class="col-md-9">
+
+            <div class="row">
+              <div style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;"><b>Introduction</b></div>
+              <p>
                 <br>
-                Northeastern University <br>
-                B.S. and M.S. Electrical Engineering <br>
-                Concn. in Machine Learning & Computer Vision
+                Zeying Gong is currently pursuing his MPhil in Artificial Intelligence at the Hong Kong University of Science and Technology (Guangzhou) under the guidance of <a href="https://junweiliang.me/" style="text-decoration: underline;"><strong>Prof. Junwei Liang</strong></a>. His research primarily revolves around time-series forecasting, specifically developing algorithms for forecasting electricity demand and weather precipitation. 
+                <br>
+                Before embarking on his MPhil journey, Zeying spent over a year as a 5G network engineer at Huawei. There, he played a pivotal role in the Jiangxi provincial high-speed rail 4G & 5G base station project and was actively involved in the technical development of MetaAAU and the ultra-long coverage features of 700M antennas. Zeying earned his Bachelor's degree in Electronic Information Science and Technology from Sun Yat-sen University, supervised by <a href="https://sece.sysu.edu.cn/szll/js/zngz/1408949.htm" style="text-decoration: underline;"><strong>Prof. Bin Rao</strong></a>. <br></br>
+                His current research interests include <strong>Time Series Analysis</strong> and <strong>AI4Science</strong>.
               </p>
             </div>
-          </div>
-
-          <br>
-          <hr>
-          <h1 class="anchor" id="bio"> </h1>
-          <h2>About Me</h2>
-          <p>
-            I am currently a 4th year Robotics Ph.D. student at Georgia Tech advised by <a class=body-size href="https://www.cc.gatech.edu/~dbatra/"><u>Dhruv Batra</u></a> and <a class=body-size href="https://www.cc.gatech.edu/~sha9/"><u>Sehoon Ha</u></a>. Previously, I graduated with my BS and MS from Northeastern University. My research interests involve scalable learning methods that will teach robots to effectively perceive and interact within various environments in the real world by training them within realistic simulators before transferring the learned skills to reality.
-            <br><br>
-            Currently, I am interning with the Machine Learning Research team at Apple under <a class=body-size href="https://sites.google.com/view/alextoshev"><u>Alex Toshev</u></a> and <a class=body-size href="https://dexter1691.github.io/"><u>Harsh Agrawal</u></a>. During my PhD, I've also interned at the Boston Dynamics AI Institute with <a class=body-size href="https://bucherb.github.io/"><u>Bernadette Bucher</u></a> and <a class=body-size href="https://robo.guru/"><u>Jiuguang Wang</u></a> (Summer 2023), at Amazon with <a class=body-size href="https://viterbi.usc.edu/directory/faculty/Sukhatme/Gaurav"><u>Gaurav Sukhatme</u></a> on deep reinforcement learning for robotics with reward decomposition (Summer 2022), and at Meta AI with <a class=body-size href="https://scholar.google.com/citations?user=H8FJlJoAAAAJ&hl=en"><u>Akshara Rai</u></a> on mobile manipulation for object rearrangement (Summer 2021).
-            <br><br>
-            Previously I also worked with <a class=body-size href="https://coe.northeastern.edu/people/padir-taskin/"><u>Taskin Padir</u></a> in the Robotics and Intelligent Vehicles Research (RIVeR) lab at Northeastern University. There, I led Team Northeastern in mutiple international robotics competitions such as the 2019 RoboCup@Home competition in Sydney, Australia, the 2018 World Robot Summit in Tokyo, Japan, and the Robocup@Home 2018 in Montreal, Canada, where we placed 4th internationally and 1st in the USA.
-            <br><br>
-            I have also had the pleasure of mentoring other students, such as <a class=body-size href="https://qianluo.netlify.app/"><u>Qian Luo</u></a> (MS@GT), <a class=body-size href="https://www.simarkareer.com/"><u>Simar Kareer</u></a> (MS@GT), and <a class=body-size href="https://www.linkedin.com/in/marco-delgado--/"><u>Marco Delgado</u></a> (BS@GT) in research projects.
-            <br><br>
-            One of my hobbies is taking photos. You can see some <a href="photos.html"><u>here</u></a>.
-            <br><br>
-            <style>
-              .logos-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-items: flex-start;
-                max-width: 1000px; /* Reduced from 1200px */
-                margin: 0 auto;
-              }
-
-              .logo-item {
-                flex: 0 0 auto; /* Changed from 33.33% */
-                width: 200px; /* Fixed width */
-                padding: 15px;
-                box-sizing: border-box;
-                text-align: center;
-              }
-
-              .logo-row {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                margin-bottom: 20px; /* Space between rows */
-                gap: 30px; /* Space between logos */
-              }
-
-              @media (max-width: 768px) {
-                .logo-row {
-                  flex-wrap: wrap;
-                }
-                .logo-item {
-                  width: 50%;
-                }
-              }
-
-              @media (max-width: 480px) {
-                .logo-item {
-                  width: 100%;
-                }
-              }
-
-              .logo img {
-                height: 40px;
-                margin-bottom: 15px;
-              }
-
-              .descrip {
-                display: block;
-              }
-            </style>
-
-            <div class="logos-container">
-              <div class="logo-row">
-                <div class="logo-item">
-                  <div class='logo'>
-                    <img src="https://github.com/naokiyokoyama/website_media/raw/master/imgs/logos/apple-logo-transparent.png" alt="Apple Logo">
-                  </div>
-                  <span class="descrip">Apple Machine Learning Research<br>Summer 2024</span>
-                </div>
-
-                <div class="logo-item">
-                  <div class='logo'>
-                    <img src="https://github.com/naokiyokoyama/website_media/raw/master/imgs/logos/bdaii.png" alt="Boston Dynamics AI Institute Logo">
-                  </div>
-                  <span class="descrip">Boston Dynamics AI Institute<br>Summer 2023</span>
-                </div>
-
-                <div class="logo-item">
-                  <div class='logo'>
-                    <img src="https://github.com/naokiyokoyama/website_media/raw/master/imgs/logos/am_logo.png" alt="Amazon Science Logo">
-                  </div>
-                  <span class="descrip">Amazon Science<br>Summer 2022</span>
-                </div>
-              </div>
-
-              <div class="logo-row">
-                <div class="logo-item">
-                  <div class='logo'>
-                    <img src="https://github.com/naokiyokoyama/website_media/raw/master/imgs/logos/meta_logo.png" alt="Meta AI FAIR Logo">
-                  </div>
-                  <span class="descrip">Meta AI FAIR<br>Summer 2021</span>
-                </div>
-
-                <div class="logo-item">
-                  <div class='logo'>
-                    <img src="img/logos/river.png" alt="RIVeR Research Lab Logo">
-                  </div>
-                  <span class="descrip">RIVeR Research Lab<br>2017 - 2019</span>
-                </div>
-              </div>
-            </div>
-          </p>
-          <br>
-          <hr>
-          <h2>Awards</h2>
-            <ul>
-              <li>Herbert P. Haley Fellowship 2024</li>
-              <li>Best Paper in Cognitive Robotics ICRA 2024 (1 of 3,937 submissions, 0.025%)</li>
-              <li>Quad Fellowship Finalist, 2024</li>
-              <li>Achievement Rewards for College Scientists (ARCS) Fellowship 2022, 2023</li>
-              <li>Adobe Research Fellowship 2022 Finalist</li>
-              <li>iGibson Dynamic Visual Navigation Challenge 2021 1st Place</li>
-              <li>Robocup@Home 2019 1st Place in USA, 2018 1st Place in USA</li>
-              <li>Northeastern Senior Capstone Design 2018, 1st Place</li>
-              <li>Joseph Spear Scholarship 2017</li>
-              <li>SASE Kellogg Scholarship 2016</li>
-              <li>Clara & Joseph Ford Scholarship 2016</li>
-              <li>HackMIT “Best NativeScript App for IoT” Winner 2016</li>
-              <li>SASE InnoService Competition 3rd Place 2014-15, 3rd Place 2013-2014</li>
-              <li>Karen T. Rigg Scholarship 2014</li>
-              <li>Gordon CenSSIS Scholar 2013</li>
-              <li>George Alden and Amelia Peabody Scholarship 2013-18</li>
-              <li>Dean's Scholarship 2013-18</li>
-            </ul>
-          <br>
-          <div class="row">
-            <div class="col-sm-6">
-            </div>
-          </div>
-          <hr>
-          <h1 class="anchor" id="research"> </h1>
-          <h2>Research</h2>
-          <br>
-          <!--- OVON -->
-          <div class="row">
-            <div class="col-sm-6">
-              <div style="text-align: center;">
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/ovon/ep=2093-spl=0.35-scid=00873-bxsVRursffK-cat-cat=bathroom%20cabinet.mp4" type="video/mp4"/>
-                </video>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <span class="subhead">HM3D-OVON: A Dataset and Benchmark for Open-Vocabulary Object Goal Navigation</span>
-              <br>
-              <p>
-                <i>
-                  <b>Naoki Yokoyama*</b>, Ram Ramrakhya*, Abhishek Das, Dhruv Batra, Sehoon Ha
-                  <br><br>
-                    <i>IROS 2024</i>
-                  <br>
-                </i>
-              </p>
-              <a class="proj" href="portfolio/ovon.html">Project Page</a>
-              <a class="proj" href="https://github.com/naokiyokoyama/ovon">Code</a>
-              <br><br>
-              <p>Trained transformer-based open-vocabulary ObjectNav policies using DAgger and released new dataset.</p>
-              <br>
-            </div>
-          </div>
-          <hr>
-          <!--- VLFM -->
-          <div class="row">
-            <div class="col-sm-6">
-              <div style="text-align: center;">
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/5.0_microwave_h265_small.mp4" type="video/mp4; codecs=hevc"/>
-                  <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/5.0_microwave_small.mp4" type="video/mp4"/>
-                </video>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <span class="subhead">VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation</span>
-              <br>
-              <p>
-                <i>
-                  <b>Naoki Yokoyama</b>, Sehoon Ha, Dhruv Batra, Jiuguang Wang, Bernadette Bucher
-                  <br><br>
-                  <i><font color="green"><b>Best Paper in Cognitive Robotics at ICRA 2024.</i></b></font> 1 of 3,937 submissions (0.025%).
-                  <br>
-                  <i>Workshop on Language and Robot Learning at CoRL 2023</i>
-                </i>
-              </p>
-              <a class="proj" href="portfolio/vlfm.html">Project Page</a>
-              <a class="proj" href="https://arxiv.org/abs/2312.03275">Paper</a>
-              <a class="proj" href="https://github.com/bdaiinstitute/vlfm">Code</a>
-              <br><br>
-              <p>State-of-the-art ObjectNav performance using vision-language foundation models.</p>
-              <br>
-            </div>
-          </div>
-          <hr>
-          <!--- LSC -->
-          <div class="row">
-            <div class="col-sm-6">
-              <div style="text-align: center;">
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="http://www.joannetruong.com/projects/teasers/lsc.mp4"></source>
-                </video>
-              <div style="text-align: center;">
-                <img src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/asc/cvpr_23.jpg" width="85%">
-              </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <span class="subhead">LSC: Language-guided Skill Coordination for Open-Vocabulary Mobile Pick-and-Place</span>
-              <br>
-              <p>
-                <i>
-                  Tsung-Yen Yang, Sergio Arnaud, Kavit Shah, <b>Naoki Yokoyama</b>, Alexander Clegg, Joanne Truong , Eric Undersander, Oleksandr Maksymets, Sehoon Ha, Mrinal Kalakrishnan, Roozbeh Mottaghi, Dhruv Batra, Akshara Rai
-                  <br><br>
-                  <i>CVPR 2023 Demo Track</i>
-                  <br>
-                  <i>CVPR 2023 Meta AI Booth</i>
-                </i>
-              </p>
-              <a class="proj" href="https://languageguidedskillcoordination.github.io/">Project Page</a>
-              <br><br>
-              <p>Open-vocabulary mobile manipulation using LLMs to generate plans from natural language commands.</p>
-              <br>
-            </div>
-          </div>
-          <hr>
-          <!--- ASC -->
-          <div class="row">
-            <div class="col-sm-6">
-              <div style="text-align: center;">
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/adaptiveskillcoordination/adaptiveskillcoordination.github.io/raw/main/media/apartment_30x.mp4" type="video/mp4"></source>
-                </video>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <span class="subhead">Adaptive Skill Coordination for Robotic Mobile Manipulation</span>
-              <br>
-              <p>
-                <i>
-                  <b>Naoki Yokoyama</b>, Alexander Clegg, Joanne Truong, Eric Undersander, Tsung-Yen Yang, Sergio Arnaud, Sehoon Ha, Dhruv Batra, Akshara Rai
-                  <br><br>
-                    <i>RA-L 2023</i>
-                  <br>
-                    <i>ICRA 2024</i>
-                  <br>
-                </i>
-              </p>
-              <a class="proj" href="https://adaptiveskillcoordination.github.io/">Project Page</a>
-              <a class="proj" href="https://arxiv.org/abs/2304.00410">Paper</a>
-              <br><br>
-              <p>Near-perfect mobile pick-and-place in diverse unseen real-world environments without obstacle maps or precise object locations.</p>
-              <br>
-            </div>
-          </div>
-          <hr>
-          <!--- OVRL-V2 -->
-          <div class="row">
-            <div class="col-sm-6">
-              <div style="text-align: center;">
-                <img src="https://ram81.github.io/img/ovrl-v2/teaser.jpg" width="100%">
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <span class="subhead">OVRL-V2: A simple state-of-art baseline for ImageNav and ObjectNav</span>
-              <br>
-              <p>
-                <i>
-                  Karmesh Yadav*, Arjun Majumdar*, Ram Ramrakhya, <b>Naoki Yokoyama</b>, Aleksei Baevski, Zsolt Kira, Oleksandr Makysmets, Dhruv Batra
-                  <br><br>
-                </i>
-              </p>
-              <a class="proj" href="https://arxiv.org/abs/2303.07798">Paper</a>
-              <br><br>
-            </div>
-          </div>
-          <hr>
-          <!--- ViNL -->
-          <div class="row">
-            <div class="col-sm-6">
-              <center>
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/imgs/vloco/vloco_maze.mp4" type="video/mp4"></source>
-                </video>
-              </center>
-            </div>
-            <div class="col-sm-6">
-              <span class="subhead">ViNL: Visual Navigation and Locomotion Over Obstacles</span>
-              <br>
-              <p>
-                <i>
-                  <b>Naoki Yokoyama*</b>, Simar Kareer*, Dhruv Batra, Sehoon Ha, Joanne Truong
-                  <br><br>
-                  <i>ICRA 2023</i>
-                  <br>
-                  <i><font color="green"><b>Best Paper Award</b> </font>at Learning for Agile Robotics Workshop at CoRL 2022</i>
-                </i>
-              </p>
-              <a class="proj" href="http://www.joannetruong.com/projects/vinl.html">Project Page</a>
-              <a class="proj" href="https://arxiv.org/abs/2210.14791">Paper</a>
-              <br><br>
-              <p>
-                Learned vision-based locomotion and navigation policies with Learning By Cheating to enable quadruped
-                robots to navigate unfamiliar cluttered environments by stepping over obstacles.
-              </p>
-              <br>
-            </div>
-          </div>
-          <hr>
-          <!--- Kinematic Navigation -->
-          <div class="row">
-            <div class="col-sm-6">
-              <center>
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/4x_spot_coda.mp4" type="video/mp4"></source>
-                </video>
-              </center>
-            </div>
-            <div class="col-sm-6">
-                <span class="subhead">Rethinking Sim2Real: Lower Fidelity Simulation Leads to Higher Sim2Real Transfer in Navigation</span>
+            <!-- <div style="font-family: Arial, Helvetica, sans-serif; font-size: 24px;"><b>I'm on the job market and am looking for positions globally starting in mid-2023. Please <a href="mailto:tapjdey@gmail.com">let me know</a> if you have any leads or are interested in having a discussion!</b></div> -->
+            <!-- NEWS -->
+            <div class="row" style="margin-bottom:1cm;">
                 <br>
-                <p>
-                  <i>
-                    Joanne Truong, Max Rudolph, <strong>Naoki Yokoyama</strong>, Sonia Chernova, Dhruv Batra, Akshara Rai
-                    <br><br>
-                    <i>CoRL 2022</i>
-                  </i>
-                </p>
-                <a class="proj" href="http://www.joannetruong.com/projects/kin2dyn.html">Project Page</a>
-                <a class="proj" href="https://arxiv.org/abs/2207.10821">Paper</a>
-                <br><br>
-            </div>
-          </div>
-          <hr>
-          <!--- iGibson Challenge -->
-          <div class="row">
-            <div class="col-sm-6">
-              <center>
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/social_nav_example.mp4" type="video/mp4"></source>
-                </video>
-                <a href="https://www.youtube.com/watch?v=kC9wdC3abDo">
-                  <img src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/igibson2021/igibson_small.jpg" alt="" width=60%>
-                </a>
-              </center>
-            </div>
-            <div class="col-sm-6">
-                <span class="subhead">Benchmarking Augmentation Methods for Learning Robust Navigation Agents: The Winning Entry of the 2021 iGibson Challenge</span>
+                <div style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;"><b>Latest News</b></div>
                 <br>
-                <p>
-                  <i>
-                    <strong>Naoki Yokoyama</strong>, Qian Luo, Dhruv Batra, Sehoon Ha
-                    <br><br>
-                    <i>IROS 2022</i>
-                    <br>
-                    <i>Embodied AI Workshop at CVPR 2022</i>
-                  </i>
-                </p>
-                <a class="proj" href="http://svl.stanford.edu/igibson/challenge.html">Challenge Page</a>
-                <a class="proj" href="https://embodied-ai.org/">Workshop Page</a>
-                <a class="proj" href="https://arxiv.org/abs/2109.10493">Paper</a>
-                <br><br>
-                <p>
-                  Achieved 1st place in the 2021 iGibson Visual Navigation Challenge using data augmentation methods
-                  coupled with deep reinforcement learning (PPO).
-                </p>
+                <ul><li>2023.10: Heading to HKUST for a Cross-Campus Study, honored to have Prof. <a href="https://sites.google.com/view/dyyeung/" style="text-decoration: underline;"><strong>Prof. Dit Yan Yeung</strong></a> as my host supervisor.</li>
+                    <li>2023.09: I submitted two academic papers to the top AI conference <a href="https://iclr.cc/"><strong>ICLR'24</strong></a>.</li>
+                    <li>2023.07: Our team won the Excellence Award in <a href="http://sd.cma.gov.cn/xwzx_3497/qxyw/202307/t20230717_5652068.html"><strong>0-24 hours Precipitation Nowcasting Challenge</strong></a></li>
+                    </ul>
             </div>
-          </div>
-          <hr>
-          <!--- OIAYN -->
-          <div class="row">
-            <div class="col-sm-6">
-              <center>
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/20.0x_mf_desk2bathroom_run3.mp4" type="video/mp4"></source>
-                </video>
-                <br>
-                <br>
-                <img src="img/oiayn/oiayn_figure.png" width=100%>
-              </center>
-            </div>
-            <div class="col-sm-6">
-                <span class="subhead">Is Mapping Necessary for Realistic PointGoal Navigation?</span>
-                <br>
-                <p>
-                  <i>
-                    Ruslan Partsey, Erik Wijmans, <strong>Naoki Yokoyama</strong>, Oles Dobosevych, Dhruv Batra, Oleksandr Maksymets
-                    <br><br>
-                    CVPR 2022
-                  </i>
-                </p>
-                <a class="proj" href="https://rpartsey.github.io/pointgoalnav/">Project Page</a>
-                <a class="proj" href="https://arxiv.org/abs/2206.00997">Paper</a>
-                <a class="proj" href="https://github.com/rpartsey/pointgoal-navigation">Code</a>
-                <br><br>
-                <p>Can an autonomous agent navigate in a new environment without ever building an explicit map?</p>
-            </div>
-          </div>
-          <hr>
-          <!--- SCT -->
-          <div class="row">
-            <div class="col-sm-6">
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/sct_reality.mp4" type="video/mp4"></source>
-                </video>
-            </div>
-            <div class="col-sm-6">
-                <span class="subhead">Success Weighted By Completion Time: A Dynamics-Aware Evaluation Criteria for Embodied Navigation</span>
-                <br>
-                <p>
-                  <i><strong>Naoki Yokoyama,</strong> Sehoon Ha, Dhruv Batra</i>
-                  <br><br>
-                  <i>IROS 2021</i>
-                </p>
-                <br>
-                <a class="proj" href="portfolio/sct.html">Project Page</a>
-                <a class="proj" href="https://www.youtube.com/watch?v=QOQ56XVIYVE">Video</a>
-                <a class="proj" href="https://arxiv.org/abs/2103.08022">Paper</a>
-                <a class="proj" href="https://github.com/naokiyokoyama/rrt_star">Code</a>
-                <br><br>
-                <p>Dynamics-aware training and evaluation for navigation. Demonstrated that trained agents better leveraged the dynamics of the robot to be faster than previous work, both within simulation and in the real world.</p>
-                <br>
-            </div>
-          </div>
-          <hr>
-          <!--- PETRA -->
-          <div class="row">
-            <div class="col-sm-6">
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/15.0_groceries.mp4" type="video/mp4"></source>
-                </video>
-            </div>
-            <div class="col-sm-6">
-                <span class="subhead">System Architecture for Autonomous Mobile Manipulation of Everyday Objects in Domestic Environments</span>
-                <br>
-                <p>
-                  <i>Tarik Kelestemur, <strong>Naoki Yokoyama,</strong> Joanne Truong, Anas Abou Allaban, Taskin Padir</i>
-                  <br><br>
-                  <i>PETRA 2019</i>
-                </p>
-                <br>
-                <a class="proj" href="https://www.youtube.com/watch?v=cEz72gakjXk">Video</a>
-                <a class="proj" href="https://dl.acm.org/citation.cfm?id=3316797">Paper</a>
-                <a class="proj" href="https://github.com/tkelestemur/frasier_openrave">Code</a>
-                <br><br>
-            </div>
-          </div>
-          <hr>
-          <!--- Sydney -->
-          <div class="row">
-            <div class="col-sm-6">
-                <img src="img/portfolio_icons/robocup2019.jpg" width="100%">
-            </div>
-            <div class="col-sm-6">
-                <span class="subhead">Robocup@Home 2019 in Sydney, Australia</span>
-                <br>
-                <br>
-                <p>Finished 1st place among US teams.</p>
-            </div>
-          </div>
-          <hr>
-          <!--- WRS -->
-          <div class="row">
-            <div class="col-sm-6">
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/wrs_clip.mp4" type="video/mp4"></source>
-                </video>
-            </div>
-            <div class="col-sm-6">
-                <span class="subhead">World Robot Competition 2018 in Tokyo, Japan</span>
-                <br>
-                <br>
-                <p>Competition with mobile manipulation and perception tasks, held in Odaiba's Tokyo Big Sight.</p>
-            </div>
-          </div>
-          <hr>
-          <!--- Montreal -->
-          <div class="row">
-            <div class="col-sm-6">
-              <center>
-                <img src="img/portfolio_icons/robocup2018.jpg" width="100%">
-                <br><br>
-                <video playsinline autoplay muted loop style="width: 100%" class="webby">
-                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/mask_rcnn_robust_detections.mp4" type="video/mp4"></source>
-                </video>
-              </center>
-            </div>
-            <div class="col-sm-6">
-              <span class="subhead">Robocup@Home 2018 in Montreal, Canada</span>
-              <br><br>
-              <a class="proj" href="portfolio/maskrcnn.html">Object Segmentation</a>
-              <a class="proj" href="portfolio/person_descrip.html">Person Description</a>
-              <br><br>
-              <p>Finished 4th internationally, 1st among USA. Completed various mobile manipulation and human-robot interaction tasks using deep learning and computer vision.</p>
-            </div>
-          </div>
-          <hr>
-
+            
+            
+            
         </div>
-        <div class="col-md-1"></div>
+        <br></br>
+        <!-- <div class="row">
+          <br>
+          <div style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;" id="research"><b>Active Research Projects</b></div>
+          <ul>
+            <li><b>TREES Project:</b> Enabling InnerSource software development/Corporate Software Engineering 
+              Capability at Huawei as part of the <a href="https://trees.lero.ie/">TREES</a> project. </li>
+              <ul>
+                <li> <a href="https://tapjdey.github.io/InnerSource_Survey_2020/index.html">Results of the State of the InnerSource survey 2020 </a> [<a href="https://youtu.be/-XWBzcYuvxA" target="_top"> Video of the Talk</a> presented at the <a href="http://innersourcecommons.org/events/isc-apac-dec-2020/">2020 APAC InnerSource Commons summit</a>] </li>
+                <li><a href="https://github.com/tapjdey/InnerSource_Project_Fitness">A tool for estimating the "Fitness" of a project for InnerSource style development.</a> (Can be translated to English and Chinese on the fly)</li>
+                <li>Our proposed model for assessing InnerSource-readiness of a candidate project has been accepted as a Pattern in <a href="https://github.com/InnerSourceCommons/InnerSourcePatterns/blob/master/patterns/1-initial/good-first-project.md">InnerSource Commons</a>.</li>
+              </ul>
+            <li><b>Open Source Newcomers:</b> Facilitating the success of new developers and projects joining the Open Source ecosystem. </li>
+            <ul>
+        </div>  
+        <div class="row">
+          <div style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;"><b>Past/Dormant Research Projects</b></div>
+          <ul>
+            <li>    Research on code-commit bot detection.</li>
+            <li>    Software Supply Chain: Exploring the Effects of Interdependencies in a Software Ecosystem on Popularity.</li>
+            <li>    Predicting Pull Request Quality.</li>
+            <li>	  Effects of Software Usage on Perceived Quality of a Software.</li>
+          </ul>
+        </div>      
+        <br> -->
+
+
+        <!-- Positions & Awards -->
+        <div class="col-md-12">
+            <div style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;" ><b> Awards and Recognitions</b></div>
+            <br>
+            <ul>
+                <li> <b>[2023] -</b> Won the Excellence Award in 0-24 hours Provincial Precipitation Nowcasting Challenge.</a></li>
+                <li> <b>[2023] -</b> Won the Campus Squash Championship at HKUST(GZ). </a></li>
+                <li> <b>[2022] -</b> Won the "Outstanding Individual Award of Jiangxi Office" at Huawei in 2022 H1. </li>
+                <li> <b>[2021] -</b> Won the "Star of Tomorrow" at Huawei.</a></li> 
+                <li> <b>[2020] -</b> Undergraduate thesis published at CIE International Conference on Radar. </a></li>              
+                <li> <b>[2019] -</b> Won the 3rd Prize in the Provincial Electronic Design Competition. </li>          
+            </ul>
+        </div>
+        
+        <!-- Publications -->
+        <div class="col-md-12">  
+        <br>
+        <div style="font-family: Arial, Helvetica, sans-serif; font-size: 28px;" id="publications"><b>Publications</b></div>
+        <div class='paper-box'>
+          <div class='paper-box-text' style="width: 100%;">
+              [1] Z Gong, B Rao. "Cluster Unmanned Aerial Vehicle Electromagnetic Calculations and Applications" 2021 CIE International Conference on Radar, 1196-1199  
+              [ <a href="pub.html" style="text-decoration: underline;"><strong>bib</strong></a> | <a href="https://ieeexplore.ieee.org/abstract/document/10027968/metrics#metrics" style="text-decoration: underline;"><strong>DOI</strong></a> | <a href="https://xueshu.baidu.com/usercenter/paper/show?paperid=1y5h0x901c2406n0rv4n0cg0d5482032&site=xueshu_se" style="text-decoration: underline;"><strong>Patent</strong></a> ]
+          </div>
+      </div>
+
+        <div class='paper-box' style="display: flex; align-items: center;">
+            <div class='paper-box-text' style="width: 50%;">
+                [2] Z Gong, Y Tang, J Liang. "PatchMixer: A Patch-Mixing Architecture for Long-Term Time Series Forecasting". arXiv preprint, 2023, URL: arxiv.org/abs/2310.00655
+                [ <a href="pub.html" style="text-decoration: underline;"><strong>bib</strong></a> | <a href="https://arxiv.org/abs/2310.00655" style="text-decoration: underline;"><strong>DOI</strong></a> | <a href="https://github.com/Zeying-Gong/PatchMixer"><strong>Code</strong></a> ]
+                
+            </div>
+            <div class='paper-box-image' style="float: right; width: 50%;">
+                <img src='PatchMixer.png' alt="sym" style="width: 100%;">
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div class='paper-box' style="display: flex; align-items: center;">
+            <div class='paper-box-text' style="width: 50%;">
+                [3] Y Tang, J Zhou, X Pan, Z Gong, J Liang. "PostRainBench: A comprehensive benchmark and a new model for precipitation forecasting". arXiv preprint, 2023, URL: arxiv.org/abs/2310.02676
+                [ <a href="pub.html" style="text-decoration: underline;"><strong>bib</strong></a> | <a href="https://arxiv.org/abs/2310.02676" style="text-decoration: underline;"><strong>DOI</strong></a> | <a href="https://github.com/yyyujintang/PostRainBench"><strong>Code</strong></a> ]
+            </div>
+            <div class='paper-box-image' style="float: right; width: 50%;">
+                <img src='PostRainBench.png' alt="sym" style="width: 100%;">
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+
+      <div class="footer">
+        Content Copyright &copy;<script>document.write(new Date().getFullYear());</script> Zeying Gong &mdash; All rights reserved | This template is made with <a style="color:#ebeff3;font-size:0.8em;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
       </div>
     </div>
-    <script src="js/bootstrap.js"></script>
-  </body>
+    <!-- /.container -->
+    
+    
+    
+</body>
+
 </html>
+
