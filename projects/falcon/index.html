@@ -32,13 +32,13 @@
 
 
 
-<section class="hero">
-  <div class="hero-body">
+<section class="hero" style="padding-top: 60px; padding-bottom: 0;">
+  <div class="hero-body" style="padding-top: 0; padding-bottom: 0;">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">From Cognition to Precognition: A Future-Aware Framework for Social Navigation</h1>
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-5 publication-authors" style="margin-bottom: 5px;">
             <span class="author-block">
 	      <a href="https://zeying-gong.github.io/">Zeying Gong</a>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
@@ -60,7 +60,7 @@
 
 
 <div class="column has-text-centered">
-  <div class="publication-links">
+  <div class="publication-links" style="margin-top: 0px;">
     <!-- PDF Link. -->
     <span class="link-block">
       <a href="https://arxiv.org/abs/2409.13244"
@@ -93,40 +93,11 @@
     </span>
 
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!--/ Paper video. -->
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Abstract</h2>
-      <figure style="margin: 20px 0; text-align: left;">
-        <img src="architecture.png" alt="The four different classes of encounter" style="width: 100%; display: block; margin: 0 auto;">
-        <figcaption style="text-align: left; margin-top: 40px;">
-          To navigate safely and efficiently in crowded spaces, robots should not only perceive the current state of the environment but also anticipate future human movements. 
-          In this paper, we propose a reinforcement learning architecture, namely Falcon, to tackle socially-aware navigation by explicitly predicting human trajectories and penalizing actions that block future human paths. 
-          To facilitate realistic evaluation, we introduce a novel SocialNav benchmark containing two new datasets, Social-HM3D and Social-MP3D. 
-          This benchmark offers large-scale photo-realistic indoor scenes populated with a reasonable amount of human agents based on scene area size, incorporating natural human movements and trajectory patterns. 
-          We conduct a detailed experimental analysis with the state-of-the-art learning-based method and two classic rule-based path-planning algorithms on the new benchmark. 
-          The results demonstrate the importance of future prediction and our method achieves the best task success rate of 55% while maintaining about 90% personal space compliance.    
-          We will release our code and datasets.
-        </figcaption>
-      </figure>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-
-<hr>
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column">
+      <div class="column" style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; background-color: #fff;">
         <h2 class="title is-3">Overview Video</h2>
         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/elNI7XlRyvU"
@@ -139,296 +110,379 @@
 
 <hr>
 
-
-<!-- Classic Encounters Section -->
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Abstract with Border and Shadow -->
+    <div class="columns is-centered">
+      <div class="column" style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; background-color: #fff;">
+        <h2 class="title is-3" style="text-align: center;">Abstract</h2>
+        <figure style="margin: 20px 0; text-align: left;">
+          <!-- 使用 figcaption 作为正式的注释 -->
+          <figcaption style="text-align: left; margin: 20px;">
+            To navigate safely and efficiently in crowded spaces, robots should not only perceive the current state of the environment but also anticipate future human movements. 
+          </figcaption>
+          
+          <!-- 图片 -->
+          <img src="task_illustration_v5.png" alt="We integrate trajectory prediction into the SocialNav task." style="width: 70%; display: block; margin: 0 auto; border-radius: 10px;">
+          
+          <!-- 下方注释 -->
+          <p style="font-size: 14px; color: #555; text-align: center; margin-top: 10px; margin-left: 100px; margin-right: 100px;">
+            We integrate <b>trajectory prediction</b> into the <b>SocialNav</b>  task.
+          </p>
+          
+        </figure>
+        
+        <figure style="margin: 20px 0; text-align: left;">
+          <figcaption style="text-align: left; margin: 30px;">
+            In this paper, we propose a reinforcement learning architecture, namely <em><strong>Falcon</strong></em> (<u>f</u>uture-aware Soci<u>al</u>Nav framework with pre<u>co</u>gnitio<u>n</u>), to tackle socially-aware navigation by explicitly predicting human trajectories and penalizing actions that block future human paths. 
+          </figcaption>
+          <img src="architecture.png" alt="Falcon Overview" style="width: 80%; display: block; margin: 0 auto; border-radius: 10px;">
+          <!-- 下方注释 -->
+          <p style="font-size: 14px; color: #555; text-align: center; margin-top: 10px; margin-left: 100px; margin-right: 100px;">
+            <em><strong>Falcon</strong></em> Overview.
+          </p>
+        </figure>
+        
+      <figure>
+          <figcaption style="text-align: left; margin: 20px;">
+            To facilitate realistic evaluation, we introduce a novel SocialNav benchmark containing two new datasets, <strong>Social-HM3D and Social-MP3D</strong>. 
+            This benchmark offers large-scale photo-realistic indoor scenes populated with a reasonable amount of human agents based on scene area size, incorporating natural human movements and trajectory patterns.
+          </figcaption>
+          <img src="datasets.jpg" alt="Benchmark Overview" style="width: 80%; display: block; margin: 0 auto; border-radius: 10px;">
+          <p style="font-size: 14px; color: #555; text-align: center; margin-top: 10px; margin-left: 100px; margin-right: 100px;">
+            Benchmark Overview (<strong>Social-HM3D & Social-MP3D</strong>).
+          </p>
+        </figure>
+      <figure>
+        <figcaption style="text-align: left; margin: 20px;">
+          We conduct a detailed experimental analysis with the <strong>state-of-the-art</strong> learning-based method and two classic rule-based path-planning algorithms on the new benchmark. 
+            The results demonstrate the importance of future prediction and our method achieves the best task success rate of <strong>55%</strong> while maintaining about <strong>90%</strong> personal space compliance.
+        </figcaption>
+        <img src="exp_01.png" alt="The four different classes of encounter" style="width: 80%; display: block; margin: 0 auto; border-radius: 10px;">
+    </figure>    
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container" style="max-width: 40%; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 40px 40px; border-radius: 10px; background-color: #fff; ">
     <!-- 标题部分 -->
     <div class="has-text-centered">
       <h2 class="title is-3" style="margin-bottom: 40px;">More Videos: Classic Encounters in SocialNav</h2>
       <p style="text-align: left; margin: 20px 0;">
-        We show our method on four classic categories of encounters for SocialNav (inspired by Cancelli et al. and Pirk et al.) . Each encounter displays three videos from each of our two datasets (Social-HM3D & Social-MP3D) .
+        We show our method on four classic categories of encounters for SocialNav (inspired by Cancelli et al. [1] and Pirk et al. [2]). Each encounter displays three videos from each of our two datasets (Social-HM3D & Social-MP3D).
       </p>
       <figure style="margin: 40px 0; text-align: left;">
         <img src="4_encounters.png" alt="The four different classes of encounter" style="width: 70%; display: block; margin: 0 auto;">
-        <figcaption style="text-align: left; margin-top: 40px;">
+        <p style="font-size: 14px; color: #555; text-align: left; margin-top: 10px; margin-left: 100px; margin-right: 100px;">
           The four different classes of encounter. The dashed line represents the general direction of the agent and the person involved. The red area represents the agent’s field of view at the beginning of the encounter.
-        </figcaption>
+        </p>
       </figure>
     </div>
-  </div>
+
+    <!-- Frontal Approach Encounter Section -->
+    <section class="section" style="padding: 10px;">
+      <div class="container is-max-desktop">
+        <h3 class="title is-4 mb-5">(a) Frontal Approach</h3>
+        <p style="text-align: left; margin: 20px 0;">
+          This type of encounter happens when the robot and a human are approaching each other from opposite directions. <br>
+          Our method uses <strong>'Step Aside'</strong> to maintain a safe distance or <strong>'Predictive Shift'</strong> to proactively avoid potential collisions by predicting the human's path.
+        </p>
+        <div class="columns">
+          <!-- Social-HM3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-HM3D</h4>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/v_SdAjZufsg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h5 class="title is-6 mt-2">Step Aside</h5>
+            </div>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/4cDDKL42JYI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h5 class="title is-6 mt-2">Predictive Shift</h5>
+            </div>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/i8Vi4gfulGU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h5 class="title is-6 mt-2">Predictive Shift</h5>
+            </div>
+          </div>
+
+          <!-- Social-MP3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/6oejN8EM030" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h5 class="title is-6 mt-2">Step Aside</h5>
+            </div>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/INbveNe2DbU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h5 class="title is-6 mt-2">Predictive Shift</h5>
+            </div>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/_eU74UeWKrw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h5 class="title is-6 mt-2">Predictive Shift</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="padding: 10px;">
+      <div class="container is-max-desktop">
+        <!-- Frontal Approach -->
+        <h3 class="title is-4 mb-5">(b) Intersection</h3>
+        <p style="text-align: left; margin: 20px 0;">
+          In an intersection encounter, the robot and human paths cross each other. <br>
+          Our approach utilizes <strong>'Early Pass'</strong> to pass ahead when it is safe, <strong>'Predictive Bypass'</strong> to adjust its path based on the predicted movement, or <strong>'Proactive Yield'</strong> where the robot either stops to let the human pass or senses it is in the way and moves aside to yield the path to the human.
+        </p>
+        <!-- 中文解释：在交叉路口情境中，机器人和人类的路径会交叉。我们的方法使用“提前通过（Early Pass）”在安全时优先通过，“预测绕行（Predictive Bypass）”根据预测的运动轨迹改变路径，或者“主动让路（Proactive Yield）”停下来让人类先行。 -->
+        <div class="columns">
+          <!-- Social-HM3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-HM3D</h4>
+            
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-1-scene=bzCsHPLDztK.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Early Pass</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-2-scene=rsggHU7g7dh.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Predictive Bypass</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-3-scene=YRUkbU5xsYj.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Proactive Yield</h5>
+            </div>
+          </div>
+    
+          <!-- Social-MP3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4>
+            
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-1-scene=EU6Fwq7SyZv.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Early Pass</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-2-scene=QUCTc6BB5sX.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Predictive Bypass</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Proactive Yield</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section" style="padding: 10px;">
+      <div class="container is-max-desktop">
+        <!-- Frontal Approach -->
+        <h3 class="title is-4 mb-5">(c) Blind Corner</h3>
+        <p style="text-align: left; margin: 20px 0;">
+          Blind corner encounters occur when visibility is limited, and the robot may encounter a human unexpectedly. <br>
+          Our method involves <strong>'Proactive Avoidance'</strong> when a human is detected to safely move aside, or <strong>'Reactive Sidewalk'</strong> to instinctively walk closer to the side when visibility is low.
+        </p>
+          <div class="columns">
+          <!-- Social-HM3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-HM3D</h4>
+            
+            <div class="mb-2">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-1-scene=LEFTm3JecaC.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Reactive Sidewalk</h5>
+            </div>
+    
+            <div class="mb-2">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-2-scene=Nfvxx8J5NCo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
+            </div>
+    
+            <div class="mb-2">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-3-scene=vd3HHTEpmyA.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
+            </div>
+          </div>
+    
+          <!-- Social-MP3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4>
+            
+            <div class="mb-2">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-2-scene=QUCTc6BB5sX.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Reactive Sidewalk</h5>
+            </div>
+    
+            <div class="mb-2">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-1-scene=QUCTc6BB5sX.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
+            </div>
+    
+            <div class="mb-2">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Repeat the above section structure for the other encounter types (Intersection Encounter, Blind Corner, and Person Following) -->
+    <section class="section"  style="padding: 10px;">
+      <div class="container is-max-desktop">
+        <!-- Frontal Approach -->
+        <h3 class="title is-4 mb-5">(d) Person Following</h3>
+        <p style="text-align: left; margin: 20px 0;">
+          This encounter occurs when a human is in the robot's path. <br>
+          The robot either <strong>'Brief Tail'</strong> until the human leaves its path or <strong>Follow & Overtake</strong> when the human remains in its way.
+        </p>
+        <div class="columns">
+          <!-- Social-HM3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-HM3D</h4>
+            
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/hm3d-follow-1-scene=SByzJLxpRGn.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Brief Tail</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/hm3d-follow-2-scene=XMHNu9rRQ1y.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Follow & Overtake</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/hm3d-follow-3-scene=XNeHsjL6nBB.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Follow & Overtake</h5>
+            </div>
+          </div>
+    
+          <!-- Social-MP3D Column -->
+          <div class="column is-half">
+            <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4>
+            
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/mp3d-follow-1-scene=oLBMNvg9in8.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Brief Tail</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/mp3d-follow-2-scene=2azQ1b91cZZ.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Follow & Overtake</h5>
+            </div>
+    
+            <div class="mb-4">
+              <video controls style="width: 100%; height: 300px;">
+                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/mp3d-follow-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h5 class="title is-6 mt-2">Follow & Overtake</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Repeat the same structure for the remaining encounter sections -->
+  </div> <!-- End of the main container that includes all sections -->
 </section>
 
-<!-- Encounters Section: Repeat this section for each encounter type (e.g., Frontal Approach, Intersection Encounter, etc.) -->
+<hr>
+
 <section class="section">
-  <div class="container is-max-desktop">
-    <!-- Frontal Approach -->
-    <h3 class="title is-4 mb-5">(a) Frontal Approach</h3>
-    <p style="text-align: left; margin: 20px 0;">
-      This type of encounter happens when the robot and a human are approaching each other from opposite directions. <br>
-      Our method uses <strong>'Step Aside'</strong> to maintain a safe distance or <strong>'Predictive Shift'</strong> to proactively avoid potential collisions by predicting the human's path.
-    </p>
-    <!-- 中文解释：这种情境发生在机器人和人类从相对方向相向而行时。我们的方法采用“靠边走（Step Aside）”以保持安全距离，或者“预测路径并调整（Predictive Shift）”通过预测人类的路径来主动避开潜在的碰撞。 -->
-    <div class="columns">
-      <!-- Social-HM3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-HM3D</h4>
-        
-        <div class="mb-4">
-          <iframe width="100%" height="300" src="https://www.youtube.com/embed/v_SdAjZufsg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 class="title is-6 mt-4">Step Aside</h5>
-        </div>
+  <div class="container" style="max-width: 40%; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 40px; border-radius: 10px; background-color: #fff;">
+    <h2 class="title is-4">BibTeX</h2>
+    
+    <pre id="bibtex" style="text-align: left; margin-bottom: 0;">
+@misc{gong2024cognitionprecognitionfutureawareframework,
+  title={From Cognition to Precognition: A Future-Aware Framework for Social Navigation}, 
+  author={Zeying Gong and Tianshuai Hu and Ronghe Qiu and Junwei Liang},
+  year={2024},
+  eprint={2409.13244},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2409.13244}, 
+}</pre>
 
-        <div class="mb-4">
-          <iframe width="100%" height="300" src="https://www.youtube.com/embed/4cDDKL42JYI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 class="title is-6 mt-4">Predictive Shift</h5>
-        </div>
-
-        <div class="mb-4">
-          <iframe width="100%" height="300" src="https://www.youtube.com/embed/i8Vi4gfulGU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 class="title is-6 mt-4">Predictive Shift</h5>
-        </div>
-      </div>
-
-      <!-- Social-MP3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-MP3D</h4>
-        
-        <div class="mb-4">
-          <iframe width="100%" height="300" src="https://www.youtube.com/embed/6oejN8EM030" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 class="title is-6 mt-4">Step Aside</h5>
-        </div>
-
-        <div class="mb-4">
-          <iframe width="100%" height="300" src="https://www.youtube.com/embed/INbveNe2DbU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 class="title is-6 mt-4">Predictive Shift</h5>
-        </div>
-
-        <div class="mb-4">
-          <iframe width="100%" height="300" src="https://www.youtube.com/embed/_eU74UeWKrw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 class="title is-6 mt-4">Predictive Shift</h5>
-        </div>
-      </div>
-    </div>
+    <!-- Copy Button -->
+    <button onclick="copyBibTeX()" style="margin-top: 10px; padding: 5px 10px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+      Copy to Clipboard
+    </button>
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Frontal Approach -->
-    <h3 class="title is-4 mb-5">(b) Intersection</h3>
-    <p style="text-align: left; margin: 20px 0;">
-      In an intersection encounter, the robot and human paths cross each other. <br>
-      Our approach utilizes <strong>'Early Pass'</strong> to pass ahead when it is safe, <strong>'Predictive Bypass'</strong> to adjust its path based on the predicted movement, or <strong>'Proactive Yield'</strong> where the robot either stops to let the human pass or senses it is in the way and moves aside to yield the path to the human.
-    </p>
-    <!-- 中文解释：在交叉路口情境中，机器人和人类的路径会交叉。我们的方法使用“提前通过（Early Pass）”在安全时优先通过，“预测绕行（Predictive Bypass）”根据预测的运动轨迹改变路径，或者“主动让路（Proactive Yield）”停下来让人类先行。 -->
-    <div class="columns">
-      <!-- Social-HM3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-HM3D</h4>
-        
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-1-scene=bzCsHPLDztK.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Early Pass</h5>
-        </div>
+<script>
+  function copyBibTeX() {
+    const bibtexText = document.getElementById("bibtex").innerText;
+    navigator.clipboard.writeText(bibtexText).then(() => {
+      alert("BibTeX copied to clipboard!");
+    }).catch(err => {
+      alert("Failed to copy text: ", err);
+    });
+  }
+</script>
 
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-2-scene=rsggHU7g7dh.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Predictive Bypass</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-3-scene=YRUkbU5xsYj.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Proactive Yield</h5>
-        </div>
-      </div>
-
-      <!-- Social-MP3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-MP3D</h4>
-        
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-1-scene=EU6Fwq7SyZv.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Early Pass</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-2-scene=QUCTc6BB5sX.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Predictive Bypass</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Proactive Yield</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Frontal Approach -->
-    <h3 class="title is-4 mb-5">(c) Blind Corner</h3>
-    <p style="text-align: left; margin: 20px 0;">
-      Blind corner encounters occur when visibility is limited, and the robot may encounter a human unexpectedly. <br>
-      Our method involves <strong>'Proactive Avoidance'</strong> when a human is detected to safely move aside, or <strong>'Reactive Sidewalk'</strong> to instinctively walk closer to the side when visibility is low.
-    </p>
-      <div class="columns">
-      <!-- Social-HM3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-HM3D</h4>
-        
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-1-scene=LEFTm3JecaC.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Reactive Sidewalk</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-2-scene=Nfvxx8J5NCo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Proactive Avoidance</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-3-scene=vd3HHTEpmyA.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Proactive Avoidance</h5>
-        </div>
-      </div>
-
-      <!-- Social-MP3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-MP3D</h4>
-        
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-2-scene=QUCTc6BB5sX.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Reactive Sidewalk</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-1-scene=QUCTc6BB5sX.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Proactive Avoidance</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Proactive Avoidance</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Repeat the above section structure for the other encounter types (Intersection Encounter, Blind Corner, and Person Following) -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Frontal Approach -->
-    <h3 class="title is-4 mb-5">(d) Person Following</h3>
-    <p style="text-align: left; margin: 20px 0;">
-      This encounter occurs when a human is in the robot's path. <br>
-      The robot either <strong>'Brief Tail'</strong> until the human leaves its path or <strong>Follow & Overtake</strong> when the human remains in its way.
-    </p>
-    <div class="columns">
-      <!-- Social-HM3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-HM3D</h4>
-        
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/hm3d-follow-1-scene=SByzJLxpRGn.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Brief Tail</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/hm3d-follow-2-scene=XMHNu9rRQ1y.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Follow & Overtake</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/hm3d-follow-3-scene=XNeHsjL6nBB.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Follow & Overtake</h5>
-        </div>
-      </div>
-
-      <!-- Social-MP3D Column -->
-      <div class="column is-half">
-        <h4 class="title is-5">Social-MP3D</h4>
-        
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/mp3d-follow-1-scene=oLBMNvg9in8.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Brief Tail</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/mp3d-follow-2-scene=2azQ1b91cZZ.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Follow & Overtake</h5>
-        </div>
-
-        <div class="mb-4">
-          <video controls style="width: 100%; height: 300px;">
-            <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/follow/mp3d-follow-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h5 class="title is-6 mt-4">Follow & Overtake</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<hr>
 
 <!-- References Section -->
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container" style="max-width: 40%; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 40px; border-radius: 10px; background-color: #fff;">
     <h2 class="title is-4">References</h2>
     <div style="text-align: left;">
       <p>[1] Cancelli, Enrico, et al. "Exploiting Proximity-Aware Tasks for Embodied Social Navigation." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.</p>
@@ -436,8 +490,6 @@
     </div>
   </div>
 </section>
-
-
 
 </body>
 </html>
