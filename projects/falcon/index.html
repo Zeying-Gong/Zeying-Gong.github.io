@@ -30,6 +30,58 @@
 </head>
 <body>
 
+<!-- 侧边导航栏 -->
+<div id="sideNav" style="height: 100%; width: 250px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #f7f7f7; overflow-x: hidden; transition: 0.5s; padding-top: 60px; box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="position: absolute; top: 20px; right: 25px; font-size: 36px; text-decoration: none; color: #333;">&times;</a>
+  <h2 style="margin-left: 20px; margin-bottom: 20px; font-size: 24px;">SideNav</h2>
+  <ul id="navLinks" style="list-style-type: none; padding-left: 20px;">
+    <li style="margin-bottom: 8px;"><a href="#overview" style="text-decoration: none; color: #007bff; font-size: 16px;">Overview Video</a></li>
+    <li style="margin-bottom: 8px;"><a href="#abstract" style="text-decoration: none; color: #007bff; font-size: 16px;">Abstract</a></li>
+    <li style="margin-bottom: 8px;"><a href="#more-videos" style="text-decoration: none; color: #007bff; font-size: 16px;">More Videos</a></li>
+    <li style="margin-bottom: 8px;"><a href="#frontal-approach" style="text-decoration: none; color: #007bff; font-size: 16px;">(a) Frontal Approach</a></li>
+    <li style="margin-bottom: 8px;"><a href="#intersection" style="text-decoration: none; color: #007bff; font-size: 16px;">(b) Intersection</a></li>
+    <li style="margin-bottom: 8px;"><a href="#blind-corner" style="text-decoration: none; color: #007bff; font-size: 16px;">(c) Blind Corner</a></li>
+    <li style="margin-bottom: 8px;"><a href="#person-following" style="text-decoration: none; color: #007bff; font-size: 16px;">(d) Person Following</a></li>
+    <li style="margin-bottom: 8px;"><a href="#bibtex" style="text-decoration: none; color: #007bff; font-size: 16px;">BibTeX</a></li>
+    <li style="margin-bottom: 8px;"><a href="#references" style="text-decoration: none; color: #007bff; font-size: 16px;">References</a></li>
+  </ul>
+</div>
+
+<!-- 侧边导航栏打开按钮 -->
+<span id="openSideNav" onclick="openNav()" style="font-size: 30px; cursor: pointer; position: fixed; top: 20px; left: 20px; z-index: 2; color: #007bff; display: none;">&#9776;</span>
+
+<script>
+  // 打开侧边导航栏的函数
+  function openNav() {
+    document.getElementById("sideNav").style.width = "250px";  // 设置侧边栏宽度
+    document.getElementById("openSideNav").style.display = "none"; // 隐藏打开按钮
+  }
+
+  // 关闭侧边导航栏的函数
+  function closeNav() {
+    document.getElementById("sideNav").style.width = "0"; // 设置侧边栏宽度为0隐藏
+    document.getElementById("openSideNav").style.display = "block"; // 显示打开按钮
+  }
+
+  // 获取所有导航链接，并添加点击事件以平滑滚动
+  document.querySelectorAll('#navLinks a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      // 阻止默认的跳转行为
+      e.preventDefault();
+      
+      // 获取目标元素的ID
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      // 使用平滑滚动跳转到对应的位置
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+</script>
+
 
 
 <section class="hero" style="padding-top: 60px; padding-bottom: 0;">
@@ -81,19 +133,34 @@
         <span>Video</span>
       </a>
     </span>
+
     <!-- Code Link. -->
     <span class="link-block">
-      <a href="https://arxiv.org/pdf/2406.09738"
+      <a href=""
          class="external-link button is-normal is-rounded is-dark">
         <span class="icon">
             <i class="fab fa-github"></i>
         </span>
-        <span>Code (Coming Soon)</span>
-        </a>
+        <span>Code</span>
+      </a>
     </span>
 
+    <!-- Datasets Link. -->
+    <span class="link-block">
+      <a href="" 
+         class="external-link button is-normal is-rounded is-dark">
+        <span class="icon">
+            <i class="fas fa-database"></i>
+        </span>
+        <span>Datasets</span>
+      </a>
+    </span>
+  </div>
+</div>
 
-<section class="section">
+
+
+<section id="overview" class="section"> 
   <div class="container is-max-desktop">
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
@@ -110,7 +177,7 @@
 
 <hr>
 
-<section class="section">
+<section id="abstract" class="section">
   <div class="container is-max-desktop">
     <!-- Abstract with Border and Shadow -->
     <div class="columns is-centered">
@@ -167,8 +234,10 @@
 
 <hr>
 
-<section class="section">
-  <div class="container" style="max-width: 40%; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 40px 40px; border-radius: 10px; background-color: #fff; ">
+<section id="more-videos" class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <div class="columns is-centered">
+  <div class="column" style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; background-color: #fff;">
     <!-- 标题部分 -->
     <div class="has-text-centered">
       <h2 class="title is-3" style="margin-bottom: 40px;">More Videos: Classic Encounters in SocialNav</h2>
@@ -184,11 +253,11 @@
     </div>
 
     <!-- Frontal Approach Encounter Section -->
-    <section class="section" style="padding: 10px;">
+    <section id="frontal-approach" class="section" style="padding: 10px;">
       <div class="container is-max-desktop">
         <h3 class="title is-4 mb-5">(a) Frontal Approach</h3>
         <p style="text-align: left; margin: 20px 0;">
-          This type of encounter happens when the robot and a human are approaching each other from opposite directions. <br>
+          In this case, the robot and a human are approaching each other from opposite directions. <br>
           Our method uses <strong>'Step Aside'</strong> to maintain a safe distance or <strong>'Predictive Shift'</strong> to proactively avoid potential collisions by predicting the human's path.
         </p>
         <div class="columns">
@@ -228,7 +297,7 @@
         </div>
       </div>
     </section>
-    <section class="section" style="padding: 10px;">
+    <section id="intersection" class="section" style="padding: 10px;">
       <div class="container is-max-desktop">
         <!-- Frontal Approach -->
         <h3 class="title is-4 mb-5">(b) Intersection</h3>
@@ -241,98 +310,70 @@
           <!-- Social-HM3D Column -->
           <div class="column is-half">
             <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-HM3D</h4>
-            
             <div class="mb-4">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-1-scene=bzCsHPLDztK.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/0lOm5Gd26fo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Early Pass</h5>
             </div>
-    
+
             <div class="mb-4">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-2-scene=rsggHU7g7dh.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/feESIWYhWw4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Predictive Bypass</h5>
             </div>
-    
+
             <div class="mb-4">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/hm3d-intersection-3-scene=YRUkbU5xsYj.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/AQi5teVYQF0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Proactive Yield</h5>
             </div>
-          </div>
+          
     
           <!-- Social-MP3D Column -->
           <div class="column is-half">
             <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4>
             
             <div class="mb-4">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-1-scene=EU6Fwq7SyZv.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/mJShT6DCFew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Early Pass</h5>
             </div>
-    
+
             <div class="mb-4">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-2-scene=QUCTc6BB5sX.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/Qk0iZKqSxiA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Predictive Bypass</h5>
             </div>
-    
+
             <div class="mb-4">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/intersection/mp3d-intersection-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/CT6ejBwveYA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Proactive Yield</h5>
             </div>
+
           </div>
         </div>
       </div>
     </section>
     
-    <section class="section" style="padding: 10px;">
+    <section id="blind-corner" class="section" style="padding: 10px;">
       <div class="container is-max-desktop">
         <!-- Frontal Approach -->
         <h3 class="title is-4 mb-5">(c) Blind Corner</h3>
         <p style="text-align: left; margin: 20px 0;">
-          Blind corner encounters occur when visibility is limited, and the robot may encounter a human unexpectedly. <br>
+          This occurs when visibility is limited, and the robot may encounter a human unexpectedly. <br>
           Our method involves <strong>'Proactive Avoidance'</strong> when a human is detected to safely move aside, or <strong>'Reactive Sidewalk'</strong> to instinctively walk closer to the side when visibility is low.
         </p>
           <div class="columns">
           <!-- Social-HM3D Column -->
           <div class="column is-half">
             <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-HM3D</h4>
-            
-            <div class="mb-2">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-1-scene=LEFTm3JecaC.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/ANPF-qjXSjQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Reactive Sidewalk</h5>
             </div>
-    
-            <div class="mb-2">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-2-scene=Nfvxx8J5NCo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/KP9QTX5GZiA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
             </div>
-    
-            <div class="mb-2">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/hm3d-corner-3-scene=vd3HHTEpmyA.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/zqGYwTYc7AY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
             </div>
           </div>
@@ -341,36 +382,28 @@
           <div class="column is-half">
             <h4 class="title is-5" style="margin-top: 6px; margin-bottom: 6px;">Social-MP3D</h4>
             
-            <div class="mb-2">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-2-scene=QUCTc6BB5sX.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/QHQgM6UuJ74" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Reactive Sidewalk</h5>
             </div>
-    
-            <div class="mb-2">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-1-scene=QUCTc6BB5sX.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/4BdF8qB2Vks" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
             </div>
-    
-            <div class="mb-2">
-              <video controls style="width: 100%; height: 300px;">
-                <source src="https://raw.githubusercontent.com/Zeying-Gong/Zeying-Gong.github.io/main/projects/falcon/videos/corner/mp3d-corner-3-scene=TbHJrupSAjP.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+
+            <div class="mb-4">
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/QrNzo7etELQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <h5 class="title is-6 mt-2">Proactive Avoidance</h5>
             </div>
+
           </div>
         </div>
       </div>
     </section>
     
     <!-- Repeat the above section structure for the other encounter types (Intersection Encounter, Blind Corner, and Person Following) -->
-    <section class="section"  style="padding: 10px;">
+    <section id="person-following" class="section"  style="padding: 10px;">
       <div class="container is-max-desktop">
         <!-- Frontal Approach -->
         <h3 class="title is-4 mb-5">(d) Person Following</h3>
@@ -441,13 +474,17 @@
     </section>
     <!-- Repeat the same structure for the remaining encounter sections -->
   </div> <!-- End of the main container that includes all sections -->
+  </div>
+  </div>
 </section>
 
 <hr>
 
-<section class="section">
-  <div class="container" style="max-width: 40%; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 40px; border-radius: 10px; background-color: #fff;">
-    <h2 class="title is-4">BibTeX</h2>
+<section id="bibtex" class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <div class="columns is-centered">
+      <div class="column" style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; background-color: #fff;">
+      <h2 class="title is-4">BibTeX</h2>
     
     <pre id="bibtex" style="text-align: left; margin-bottom: 0;">
 @misc{gong2024cognitionprecognitionfutureawareframework,
@@ -465,6 +502,8 @@
       Copy to Clipboard
     </button>
   </div>
+  </div>
+  </div>
 </section>
 
 <script>
@@ -481,13 +520,17 @@
 <hr>
 
 <!-- References Section -->
-<section class="section">
-  <div class="container" style="max-width: 40%; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 40px; border-radius: 10px; background-color: #fff;">
-    <h2 class="title is-4">References</h2>
+<section id="references" class="section">
+  <div class="container is-max-desktop has-text-centered">
+    <div class="columns is-centered">
+      <div class="column" style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; background-color: #fff;">
+      <h2 class="title is-4">References</h2>
     <div style="text-align: left;">
       <p>[1] Cancelli, Enrico, et al. "Exploiting Proximity-Aware Tasks for Embodied Social Navigation." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.</p>
       <p>[2] Pirk S, Lee E, Xiao X, et al. A protocol for validating social navigation policies[J]. arXiv preprint arXiv:2204.05443, 2022.</p>
     </div>
+  </div>
+  </div>
   </div>
 </section>
 
