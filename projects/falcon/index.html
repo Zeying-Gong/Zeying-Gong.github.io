@@ -466,9 +466,9 @@
   <div class="container is-max-desktop has-text-centered">
     <div class="columns is-centered">
       <div class="column" style="border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; border-radius: 10px; background-color: #fff;">
-      <h2 class="title is-4">BibTeX</h2>
-    
-    <pre id="bibtex" style="text-align: left; margin-bottom: 0;">
+        <h2 class="title is-4">BibTeX</h2>
+        
+        <pre id="bibtex-text" style="text-align: left; margin-bottom: 0;">
 @misc{gong2024cognitionprecognitionfutureawareframework,
   title={From Cognition to Precognition: A Future-Aware Framework for Social Navigation}, 
   author={Zeying Gong and Tianshuai Hu and Ronghe Qiu and Junwei Liang},
@@ -476,21 +476,20 @@
   eprint={2409.13244},
   archivePrefix={arXiv},
   primaryClass={cs.RO},
-  url={https://arxiv.org/abs/2409.13244}, 
+  url={https://arxiv.org/abs/2409.13244},  
 }</pre>
-
-    <!-- Copy Button -->
-    <button onclick="copyBibTeX()" style="margin-top: 10px; padding: 5px 10px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
-      Copy to Clipboard
-    </button>
-  </div>
-  </div>
+        <!-- Copy Button -->
+        <button onclick="copyBibTeX()" style="margin-top: 10px; padding: 5px 10px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+          Copy to Clipboard
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
 <script>
   function copyBibTeX() {
-    const bibtexText = document.getElementById("bibtex").innerText;
+    const bibtexText = document.getElementById("bibtex-text").textContent;
     navigator.clipboard.writeText(bibtexText).then(() => {
       alert("BibTeX copied to clipboard!");
     }).catch(err => {
