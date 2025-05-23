@@ -7,28 +7,70 @@
   <meta name="keywords" content="Social Navigation, Trajectory Prediciton, Auxiliary Tasks">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>From Cognition to Precognition: A Future-Aware Framework for Social Navigation</title>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans |Noto+Sans|Castoro"
         rel="stylesheet">
-
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons @1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/UST.svg.png">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <!-- 新增 CSS 样式 -->
+  <style>
+    @media screen and (max-width: 768px) {
+      #sideNav {
+        display: none;
+      }
+      #openSideNav {
+        display: block !important;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+      }
+    }
+
+    /* Top Navigation Bar for Mobile */
+    #topNavMobile {
+      display: none;
+      background-color: #f7f7f7;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    #topNavMobile a {
+      margin: 0 10px;
+      font-size: 14px;
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
-<!-- 侧边导航栏 -->
+<!-- Top Navigation Bar for Mobile -->
+<div id="topNavMobile">
+  <a href="#overview">Overview Video</a> |
+  <a href="#abstract">Abstract</a> |
+  <a href="#more-videos">More Videos</a> |
+  <a href="#bibtex">BibTeX</a> |
+  <a href="#references">References</a>
+</div>
+
+<!-- Side Navigation Bar -->
 <div id="sideNav" style="height: 100%; width: 13%; position: fixed; z-index: 1; top: 0; left: 0; background-color: #f7f7f7; overflow-x: hidden; transition: 0.5s; padding-top: 60px; box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="position: absolute; top: 20px; right: 25px; font-size: 36px; text-decoration: none; color: #333;">&times;</a>
   <h2 style="margin-left: 20px; margin-bottom: 20px; font-size: 24px;">SideNav</h2>
@@ -45,93 +87,99 @@
   </ul>
 </div>
 
-<!-- 侧边导航栏打开按钮 -->
+<!-- Open Button for Side Nav -->
 <span id="openSideNav" onclick="openNav()" style="font-size: 30px; cursor: pointer; position: fixed; top: 20px; left: 20px; z-index: 2; color: #007bff; display: none;">&#9776;</span>
 
 <script>
   // 打开侧边导航栏的函数
   function openNav() {
-    document.getElementById("sideNav").style.width = "250px";  // 设置侧边栏宽度
-    document.getElementById("openSideNav").style.display = "none"; // 隐藏打开按钮
+    document.getElementById("sideNav").style.width = "250px";
+    document.getElementById("openSideNav").style.display = "none";
   }
 
   // 关闭侧边导航栏的函数
   function closeNav() {
-    document.getElementById("sideNav").style.width = "0"; // 设置侧边栏宽度为0隐藏
-    document.getElementById("openSideNav").style.display = "block"; // 显示打开按钮
+    document.getElementById("sideNav").style.width = "0";
+    document.getElementById("openSideNav").style.display = "block";
   }
 
-  // 获取所有导航链接，并添加点击事件以平滑滚动
+  // 平滑滚动到锚点
   document.querySelectorAll('#navLinks a').forEach(link => {
     link.addEventListener('click', function(e) {
-      // 阻止默认的跳转行为
       e.preventDefault();
-      
-      // 获取目标元素的ID
       const targetId = this.getAttribute('href').substring(1);
       const targetElement = document.getElementById(targetId);
-      
-      // 使用平滑滚动跳转到对应的位置
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // 切换导航栏显示
+  window.addEventListener("load", function () {
+    const topNav = document.getElementById("topNavMobile");
+    if (window.innerWidth <= 768) {
+      topNav.style.display = "block";
+    }
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth <= 768) {
+        topNav.style.display = "block";
+      } else {
+        topNav.style.display = "none";
+      }
     });
   });
 </script>
 
-
-
 <section class="hero" style="padding-top: 60px; padding-bottom: 0;">
   <div class="hero-body" style="padding-top: 0; padding-bottom: 0;">
     <div class="container is-max-desktop">
-      <!-- Move the image to the top -->
       <div class="columns is-centered" style="margin-bottom: 20px;">
         <img src="logo_gpt.png" style="width: 120px;">
       </div>
-
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <!-- 调整标题字体大小 -->
           <h1 class="title is-1 publication-title" style="font-size: 2rem; line-height: 1.2;">
             From Cognition to Precognition:<br>A Future-Aware Framework for Social Navigation
           </h1>
           <div class="is-size-5 publication-authors" style="margin-bottom: 20px;">
             <span class="author-block">
-              <a href="https://zeying-gong.github.io/">Zeying Gong<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://zeying-gong.github.io/ ">Zeying Gong<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://hutslib.github.io/">Tianshuai Hu<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://hutslib.github.io/ ">Tianshuai Hu<sup>2</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://precognition.team/">Ronghe Qiu<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://precognition.team/ ">Ronghe Qiu<sup>1</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://junweiliang.me/">Junwei Liang<sup>1,2,&#9993;</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://junweiliang.me/ ">Junwei Liang<sup>1,2,&#9993;</sup></a>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
           </div>
-
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <sup>1</sup>HKUST(GZ)&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
-            <!-- The Hong Kong University of Science and Technology  -->
             <span class="author-block">
               <sup>2</sup>HKUST
             </span>
           </div>
-
-          <!-- 调整“Accepted at ICRA 2025”的上下边距 -->
-          <div class="is-size-5 has-text-centered" style="margin-top: 25px; margin-bottom: 20px;">
-            <strong style="color: black;">ICRA 2025</strong>
+          <!-- 修改后的会议信息 -->
+          <div class="is-size-5 has-text-centered" style="margin-top: 25px; margin-bottom: 10px;">
+            <strong style="color: black;">International Conference on Robotics and Automation (ICRA), 2025</strong>
+          </div>
+          <div class="is-size-6 has-text-centered" style="margin-bottom: 20px;">
+            Workshop on Social Navigation @ ICRA, 2025
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
 
 <div class="column has-text-centered">
   <div class="publication-links" style="margin-top: 0px;">
