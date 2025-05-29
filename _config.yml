@@ -18,13 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Naoki Yokoyama's Portfolio
+title: Zeying Gong's Portfolio
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my personal portfolio. I am a Ph.D. Student in Robotics at Georgia Tech with a background in Robotics, specializing in Machine Learning & Computer Vision. Here you will find my CV, research projects, and publications.
+  Welcome to my personal portfolio. I am a Ph.D. Student at HKUST(GZ) with a background in Artificial Intelligence, specializing in Robotic Navigation. Here you will find my research projects and publications.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://naoki.io" # the base hostname & protocol for your site
-twitter_username: naokiyokoyama0
-github_username:  naokiyokoyama
+url: "https://zeying-gong.github.io/" # the base hostname & protocol for your site
+github_username:  Zeying-Gong
 
 # Build settings
 theme: minima
