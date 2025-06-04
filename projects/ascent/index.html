@@ -172,12 +172,15 @@
         <span class="icon"><i class="fa fa-play-circle"></i></span>&thinsp; Overview Video
       </h2>
       <div style="margin-bottom: 40px;">
-        <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
-          <source src="./static/videos/final_h264_video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+          <iframe src="https://www.youtube.com/embed/V-9M0K9C6cI" 
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                  allowfullscreen 
+                  loading="lazy">
+          </iframe>
+        </div>
       </div>
-    </div>
+    </div>    
   </section>
   <hr>
   <section class="section" id="real-world-demo"  style="scroll-margin-top: 4rem;">
@@ -197,7 +200,7 @@
             <span class="icon"><i class="fa fa-layer-group"></i></span>&nbsp; Multi-Floor Navigation
           </h3>
           <!-- 🎯 Real-World: Upstairs -->
-          <div style="margin-bottom: 40px;">
+          <!-- <div style="margin-bottom: 40px;">
             <h4 class="subtitle is-5" style="text-align: left;">
               <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Potted Plant</b> (Upstairs Navigation), 5x Speed
             </h4>
@@ -205,10 +208,22 @@
               <source src="./static/videos/upstair_real.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
-  
-          <!-- 🎯 Real-World: Downstairs -->
+          </div> -->
           <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Potted Plant</b> (Upstairs Navigation), 5x Speed
+            </h4>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+              <iframe src="https://youtu.be/-bkhDvRon_Q" 
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                      allowfullscreen 
+                      loading="lazy">
+              </iframe>
+            </div>
+          </div>
+          
+          <!-- 🎯 Real-World: Downstairs -->
+          <!-- <div style="margin-bottom: 40px;">
             <h4 class="subtitle is-5" style="text-align: left;">
               <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Truck</b> (Downstairs Navigation), 5x Speed
             </h4>
@@ -216,21 +231,44 @@
               <source src="./static/videos/downstair_real.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          </div> -->
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Truck</b> (Downstairs Navigation), 5x Speed
+            </h4>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+              <iframe src="https://youtu.be/lhmm4TMbhmk" 
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                      allowfullscreen 
+                      loading="lazy">
+              </iframe>
+            </div>
           </div>
 
           <!-- 🟦 Single-Floor Demos -->
           <h3 class="title is-4" style="text-align: left;">
-            <span class="icon"><i class="fa fa-grip-lines"></i></span>&nbsp; Single-Floor Navigation, 5x Speed
+            <span class="icon"><i class="fa fa-grip-lines"></i></span>&nbsp; Single-Floor Navigation
           </h3>
   
-          <div style="margin-bottom: 40px;">
+          <!-- <div style="margin-bottom: 40px;">
             <h4 class="subtitle is-5" style="text-align: left;">
-              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Chair</b>
+              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Chair</b>, 5x Speed
             </h4>
-            <!-- <h4 class="subtitle is-5">Target Object: <b></b></h4> -->
             <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
               <source src="./static/videos/same_floor_chair.mp4" type="video/mp4"/>
             </video>
+          </div> -->
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Chair</b>, 5x Speed
+            </h4>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+              <iframe src="https://youtu.be/mzjtIzZ0b3A" 
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                      allowfullscreen 
+                      loading="lazy">
+              </iframe>
+            </div>
           </div>
         </div>
       </div>
