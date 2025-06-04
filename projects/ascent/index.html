@@ -104,7 +104,46 @@
               </br>
               Stairway to Success:</br>Zero-Shot Floor-Aware Object-Goal Navigation</br> via LLM-Driven Coarse-to-Fine Exploration
             </h1>
-            <br />
+            
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://zeying-gong.github.io/" target="_blank"><strong>Zeying Gong</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://rongli.tech/" target="_blank"><strong>Rong Li</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://hutslib.github.io/" target="_blank"><strong>Tianshuai Hu</strong></a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://openreview.net/profile?id=~Ronghe_Qiu2" target="_blank"><strong>Ronghe Qiu</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://ldkong.com/" target="_blank"><strong>Lingdong Kong</strong></a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=nzfJ4mEAAAAJ&hl" target="_blank"><strong>Lingfeng Zhang</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/ding-justin-08a421266" target="_blank"><strong>Yiyi Ding</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/leyingzhangsysu/" target="_blank"><strong>Leying Zhang</strong></a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://junweiliang.me/" target="_blank"><strong>Junwei Liang</strong></a><sup>1,2,&#9993;</sup>
+              </span>
+            </div>
+            <br>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>1</sup> The Hong Kong University of Science and Technology (Guangzhou)&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span class="author-block"><sup>2</sup> The Hong Kong University of Science and Technology&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+              <br>
+              <span class="author-block"><sup>3</sup> National University of Singapore&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span class="author-block"><sup>4</sup> Sun Yat-sen University</span>
+            </div>
+            <br>
             <div class="publication-links">
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2505.23019" class="external-link button is-dark" style="background-color: rgb(84,185,209); color: white; border-color: rgb(84,185,209);">
@@ -133,9 +172,6 @@
         <span class="icon"><i class="fa fa-play-circle"></i></span>&thinsp; Overview Video
       </h2>
       <div style="margin-bottom: 40px;">
-        <!-- <h4 class="subtitle is-5" style="text-align: left;">
-          <span class="icon"><i class="fa fa-bullseye"></i></span>&nbsp; Target Object: <b>Truck</b> (Downstairs Navigation)
-        </h4> -->
         <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
           <source src="./static/videos/final_h264_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -163,7 +199,7 @@
           <!-- 🎯 Real-World: Upstairs -->
           <div style="margin-bottom: 40px;">
             <h4 class="subtitle is-5" style="text-align: left;">
-              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Potted Plant</b> (Upstairs Navigation)
+              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Potted Plant</b> (Upstairs Navigation), 5x Speed
             </h4>
             <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
               <source src="./static/videos/upstair_real.mp4" type="video/mp4" />
@@ -174,7 +210,7 @@
           <!-- 🎯 Real-World: Downstairs -->
           <div style="margin-bottom: 40px;">
             <h4 class="subtitle is-5" style="text-align: left;">
-              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Truck</b> (Downstairs Navigation)
+              <span class="icon"><i class="fa fa-search"></i></span>&nbsp; Target Object: <b>Truck</b> (Downstairs Navigation), 5x Speed
             </h4>
             <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
               <source src="./static/videos/downstair_real.mp4" type="video/mp4" />
@@ -184,7 +220,7 @@
 
           <!-- 🟦 Single-Floor Demos -->
           <h3 class="title is-4" style="text-align: left;">
-            <span class="icon"><i class="fa fa-grip-lines"></i></span>&nbsp; Single-Floor Navigation
+            <span class="icon"><i class="fa fa-grip-lines"></i></span>&nbsp; Single-Floor Navigation, 5x Speed
           </h3>
   
           <div style="margin-bottom: 40px;">
@@ -382,7 +418,7 @@
             The <strong>Coarse-to-Fine Frontier Reasoning module</strong> (bottom-right) selects
             <strong>top-k frontiers</strong> based on <strong>image-text matching scores</strong> and uses an
             <strong>LLM</strong> for contextual reasoning across floors, achieving efficient
-            <strong>zero-shot, floor-aware object navigation</strong>.
+            <strong>zero-shot, floor-aware navigation</strong>.
         </div>
         <hr>
       </div>
