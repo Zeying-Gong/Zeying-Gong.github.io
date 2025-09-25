@@ -95,14 +95,14 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">
+            <h1 class="title is-2 publication-title" style="letter-spacing: -0.02em;">
               </br>
               <img src="static/images/compressed/stairs.png" style="height: 80px; vertical-align: bottom;" class="img-hover-effect">
               </br>
-              Stairway to Success:</br>Zero-Shot Floor-Aware Object-Goal Navigation</br> via LLM-Driven Coarse-to-Fine Exploration
+              Stairway to Success:</br>An Online Floor-Aware Zero-Shot Object-Goal</br> Navigation Framework via LLM-Driven Coarse-to-Fine Exploration
             </h1>
             
             <div class="is-size-5 publication-authors">
@@ -173,7 +173,7 @@
       </h2>
       <div style="margin-bottom: 40px;">
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
-          <iframe src="https://www.youtube.com/embed/V-9M0K9C6cI" 
+          <iframe src="https://www.youtube.com/embed/1uqS-aMk-tE"
                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
                   allowfullscreen 
                   loading="lazy">
@@ -415,19 +415,12 @@
         <h2 class="title is-3">
           <span class="icon"><i class="fa fa-lightbulb"></i></span>&thinsp; Motivation
         </h2>
-        <img src="./static/images/compressed/teaser.png" />
+        <img src="./static/images/compressed/teaser_v2.png" />
         <div class="content has-text-justified" style="padding-top: 0px">
           <p>
-            <strong>Fig: Motivation & Objective.</strong>
-            Our method enables robotic navigation in
-            <strong>unexplored multi-floor environments</strong> under a
-            <strong>zero-shot object-goal setting</strong>, leveraging prior knowledge and coarse-to-fine reasoning to
-            prioritize
-            likely target locations.
-            Unlike previous approaches that struggle with <strong>floor-aware planning</strong>, our method efficiently
-            handles
-            <strong>cross-level transitions</strong> and successfully locates objects across floors.
-            This demonstrates a meaningful step forward in the <strong>zero-shot object-goal navigation</strong> field.
+            <strong>Fig: Motivation of <strong><em>ASCENT</em></strong>.</strong> 
+            Unlike prior approaches that fail in multi-floor scenarios, our method enables online multi-floor navigation. 
+            By reasoning across floors, our policy succeeds in locating the goal and demonstrates a meaningful step forward in Zero-Shot Object-Goal Navigation.
           </p>
         </div>
         <hr>
@@ -443,20 +436,14 @@
         <h2 class="title is-3">
           <span class="icon"><i class="fa fa-rocket"></i></span>&thinsp; The ASCENT Framework
         </h2>
-        <img src="./static/images/compressed/arch.png" loading="lazy"/>
+        <img src="./static/images/compressed/arch_v2.png" loading="lazy"/>
         <div class="content has-text-justified" style="padding-top: 0px">
           <p>
-            <strong>Fig: Overview of the ASCENT framework.</strong> 
-            The system takes
-            <strong>RGB-D</strong> and <strong>GPS+Compass</strong> inputs (top-left), and uses a
-            <strong>pretrained navigation policy</strong> (bottom-left) to output actions at each timestep.
-            The <strong>Multi-Floor Spatial Abstraction module</strong> (top-right) builds single-floor
-            <strong>BEV maps</strong> and models <strong>inter-floor connectivity</strong>, enabling cross-level
-            navigation.
-            The <strong>Coarse-to-Fine Frontier Reasoning module</strong> (bottom-right) selects
-            <strong>top-k frontiers</strong> based on <strong>image-text matching scores</strong> and uses an
-            <strong>LLM</strong> for contextual reasoning across floors, achieving efficient
-            <strong>zero-shot, floor-aware navigation</strong>.
+            <strong>Fig: Framework overview of <strong><em>ASCENT</em></strong>.</strong> 
+            The system takes RGB-D inputs (top-left), and outputs navigation actions (bottom-right). 
+            The Multi-Floor Abstraction module (top) builds intra-floor BEV maps and models inter-floor connectivity. 
+            The Coarse-to-Fine Reasoning module (bottom) uses the LLM for contextual reasoning across floors. 
+            Therefore, <strong><em>ASCENT</em></strong> achieves floor-aware, Zero-Shot Object-Goal Navigation.
         </div>
         <hr>
       </div>
@@ -492,7 +479,7 @@
                 </thead>
                 <tbody>
                   <!-- Close-set (gray rows) -->
-                  <tr style="background-color: #f0f0f0; text-align: center;"><td colspan="9"><b>Setting: Close-Set</b></td></tr>
+                  <tr style="background-color: #f0f0f0; text-align: center;"><td colspan="9"><b>Setting: Learning-Based</b></td></tr>
 
                   <tr><td rowspan="5">Single-Floor</td><td>SemExp</td><td>NeurIPS'20</td><td>-</td><td>-</td><td>37.9</td><td>18.8</td><td>36.0</td><td>14.4</td></tr>
                   <tr><td>Aux</td><td>ICCV'21</td><td>-</td><td>-</td><td>-</td><td>-</td><td>30.3</td><td>10.8</td></tr>
@@ -504,7 +491,7 @@
                   <tr><td>XGX</td><td>ICRA'24</td><td>-</td><td>-</td><td>72.9</td><td>35.7</td><td>-</td><td>-</td></tr>
 
                   <!-- Open-set -->
-                  <tr style="background-color: #f0f0f0; text-align: center;"><td colspan="9"><b>Setting: Open-Set</b></td></tr>
+                  <tr style="background-color: #f0f0f0; text-align: center;"><td colspan="9"><b>Setting: Zero-Shot</b></td></tr>
 
                   <tr><td rowspan="14">Single-Floor</td><td>ZSON</td><td>NeurIPS'22</td><td>CLIP</td><td>-</td><td>25.5</td><td>12.6</td><td>15.3</td><td>4.8</td></tr>
                   <tr><td>L3MVN</td><td>IROS'23</td><td>-</td><td><img src="./static/images/compressed/gpt.png" width="20px" loading="lazy"> GPT-2</td><td>50.4</td><td>23.1</td><td>34.9</td><td>14.5</td></tr>
