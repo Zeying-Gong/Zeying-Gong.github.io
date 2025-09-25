@@ -123,13 +123,13 @@
               </span>
               <br>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=nzfJ4mEAAAAJ&hl" target="_blank"><strong>Lingfeng Zhang</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://scholar.google.com/citations?user=nzfJ4mEAAAAJ&hl" target="_blank"><strong>Lingfeng Zhang</strong></a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://guoyangzhao.github.io/" target="_blank"><strong>Guoyang Zhao</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/ding-justin-08a421266" target="_blank"><strong>Yiyi Ding</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/leyingzhangsysu/" target="_blank"><strong>Leying Zhang</strong></a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               </span>
               <span class="author-block">
                 <a href="https://junweiliang.me/" target="_blank"><strong>Junwei Liang</strong></a><sup>1,2,&#9993;</sup>
@@ -141,7 +141,7 @@
               <span class="author-block"><sup>2</sup> The Hong Kong University of Science and Technology&nbsp;&nbsp;&nbsp;&nbsp;</span> 
               <br>
               <span class="author-block"><sup>3</sup> National University of Singapore&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span class="author-block"><sup>4</sup> Sun Yat-sen University</span>
+              <span class="author-block"><sup>4</sup> Tsinghua University</span>
             </div>
             <br>
             <div class="publication-links">
@@ -373,33 +373,10 @@
           </h2>
           <div class="content has-text-justified" style="padding-top: 0px">
             <p>
-              Object-Goal Navigation (OGN) remains challenging in
-              <strong>real-world, multi-floor environments</strong> and under
-              <strong>open-vocabulary object descriptions</strong>. We observe that most episodes in widely used
-              benchmarks such as
-              <strong>HM3D</strong> and <strong>MP3D</strong> involve multi-floor buildings, with many requiring
-              explicit floor
-              transitions.
-              However, existing methods are often limited to <strong>single-floor settings</strong> or
-              <strong>predefined object
-                categories</strong>.
-              To address these limitations, we tackle two key challenges:
-              <strong>(1) efficient cross-level planning</strong> and
-              <strong>(2) zero-shot object-goal navigation (ZS-OGN)</strong>, where agents must interpret novel object
-              descriptions
-              without prior exposure.
-              We propose <strong><em>ASCENT</em></strong>, a framework that combines a
-              <strong>Multi-Floor Spatial Abstraction module</strong> for hierarchical semantic mapping and a
-              <strong>Coarse-to-Fine Frontier Reasoning module</strong> leveraging
-              <strong>Large Language Models (LLMs)</strong> for context-aware exploration, without requiring additional
-              training on
-              new object semantics or locomotion data.
-              Our method outperforms state-of-the-art <strong>ZS-OGN approaches</strong> on <strong>HM3D</strong> and
-              <strong>MP3D
-                benchmarks</strong> while enabling efficient multi-floor navigation.
-              We further validate its practicality through <strong>real-world deployment</strong> on a quadruped robot,
-              achieving
-              successful object exploration across unseen floors.
+              Deployable service and delivery robots struggle to navigate multi-floor buildings to reach object goals, as existing systems fail due to single-floor assumptions and requirements for offline, globally consistent maps. Multi-floor environments pose unique challenges including cross-floor transitions and vertical spatial reasoning, especially navigating unknown buildings. Object-Goal Navigation benchmarks like HM3D and MP3D also capture this multi-floor reality, yet current methods lack support for online, floor-aware navigation. To bridge this gap, we propose <strong><em>ASCENT</em></strong>, an online framework for Zero-Shot Object-Goal Navigation that enables robots to operate without pre-built maps or retraining on new object categories. It introduces: 
+  (1) a <strong>Multi-Floor Abstraction</strong> module that dynamically constructs hierarchical representations with stair-aware obstacle mapping and cross-floor topology modeling, and 
+  (2) a <strong>Coarse-to-Fine Reasoning</strong> module that combines frontier ranking with LLM-driven contextual analysis for multi-floor navigation decisions. 
+  We evaluate on HM3D and MP3D benchmarks, outperforming state-of-the-art zero-shot approaches, and demonstrate real-world deployment on a quadruped robot.
             </p>
           </div>
           <hr>
@@ -589,7 +566,7 @@
           <figure style="margin-bottom: 40px;">
             <img src="./static/images/compressed/revisit.png" style="width: 100%; border-radius: 10px;" loading="lazy" />
             <figcaption style="margin-top: 10px; text-align: justify;">
-              Even after incorrect decisions, the agent is capable of returning to previous floors and successfully completing navigation. 
+              Even after incorrect decisions, the robot can revisit previous floors and successfully completing navigation. 
             </figcaption>
           </figure>
   
