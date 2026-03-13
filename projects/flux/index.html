@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLUX: The first FLow-based Unified policy for X-platform navigation.</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="./static/images/compressed/stairs.png" type="image/x-icon">
+  <style>
+    a.external-link:hover {
+      background-color: rgb(109, 109, 109) !important;
+      border-color: rgb(109, 109, 109) !important;
+    }
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 50px;
+      z-index: 999;
+      background-color: rgb(0, 180, 139);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 16px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s;
+      display: none;
+    }
+    #backToTopBtn:hover {
+      background-color: rgb(239, 99, 75);
+    }
+    @media (max-width: 768px) {
+      #backToTopBtn {
+        font-size: 18px;
+        padding: 10px 14px;
+      }
+    }
+    .img-hover-effect {
+      transition: transform 0.3s ease-in-out;
+    }
+    .img-hover-effect:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑</button>
+  <script>
+    window.onscroll = function () { scrollFunction(); };
+    function scrollFunction() {
+      const button = document.getElementById("backToTopBtn");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <!-- Navbar -->
+  <nav class="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation" style="background-color: #f8f8f8; z-index: 998;">
+    <div class="container is-max-desktop">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <strong>Navigation</strong>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasic" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#main-video"><i class="fa fa-play-circle"></i>&nbsp;Main Video</a>
+          <a class="navbar-item" href="#real-world-demo"><i class="fa fa-street-view"></i>&nbsp;Real-World Demos</a>
+          <a class="navbar-item" href="#videos"><i class="fa fa-video"></i>&nbsp;Simulation Demos</a>
+          <a class="navbar-item" href="#abstract"><i class="fa fa-lightbulb"></i>&nbsp;Abstract & Overview</a>
+          <a class="navbar-item" href="#quant-results"><i class="fa fa-calculator"></i>&nbsp;Quantitative Results</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title" style="letter-spacing: -0.02em; line-height: 1.5; margin: 0 0 10px 0;">
+              <br>
+              <img src="static/images/compressed/logo_v2.png" 
+                   style="height: 100px; vertical-align: bottom; margin-bottom: 25px;" 
+                   class="img-hover-effect">
+              <br>
+              FLUX: Accelerating Cross-Embodiment Generative Navigation Policies via Rectified Flow and Static-to-Dynamic Learning
+            </h1>
+            
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://zeying-gong.github.io/" target="_blank"><strong>Zeying Gong</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="" target="_blank"><strong>Yangyi Zhong</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>              
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/ding-justin-08a421266" target="_blank"><strong>Yiyi Ding</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://hutslib.github.io/" target="_blank"><strong>Tianshuai Hu</strong></a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://guoyangzhao.github.io/" target="_blank"><strong>Guoyang Zhao</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+
+              <span class="author-block">
+                <a href="https://ldkong.com/" target="_blank"><strong>Lingdong Kong</strong></a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              
+              <span class="author-block">
+                <a href="https://rongli.tech/" target="_blank"><strong>Rong Li</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="www.linkedin.com/in/jiadi-you-2362a6354" target="_blank"><strong>Jiadi You</strong></a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </span>
+              <span class="author-block">
+                <a href="https://junweiliang.me/" target="_blank"><strong>Junwei Liang</strong></a><sup>1,2,&#9993;</sup>
+              </span>
+            </div>
+            <br>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup> The Hong Kong University of Science and Technology (Guangzhou)&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <br>
+              <span class="author-block"><sup>2</sup> The Hong Kong University of Science and Technology&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+              <br>
+              <span class="author-block"><sup>3</sup> National University of Singapore&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <div class="is-size-5 has-text-centered" style="margin-top: 25px; margin-bottom: 10px;">
+              <strong style="color: black;">Under Review</strong>
+            </div>
+            <br>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="" class="external-link button is-dark" style="background-color: rgb(84,185,209); color: white; border-color: rgb(84,185,209);">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span><b>Paper (Coming Soon)</b></span>
+                </a>
+              </span>
+              &nbsp;
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=cY6tFvKgTjo" class="external-link button is-dark" style="background-color: rgb(84,185,209); color: white; border-color: rgb(84,185,209);">
+                  <span class="icon"><i class="fas fa-video"></i></span>
+                  <span><b>Video</b></span>
+                </a>
+              </span>
+              &nbsp;
+              <span class="link-block">
+                <a href="" target="_blank" class="external-link button is-dark" style="background-color: rgb(84,185,209); color: white; border-color: rgb(84,185,209);">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span><b>Code (Coming Soon)</b></span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="" target="_blank" class="external-link button is-dark" style="background-color: rgb(84,185,209); color: white; border-color: rgb(84,185,209);">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span><b>Dataset (Coming Soon)</b></span>
+                </a>
+              </span>                 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- <hr> -->
+  <section class="section" id="main-video" style="scroll-margin-top: 4rem;">
+    <div class="container is-max-desktop has-text-centered">
+      <h2 class="title is-3">
+        <span class="icon"><i class="fa fa-play-circle"></i></span>&thinsp; Main Video
+      </h2>
+      <p style="margin-bottom: 2em;">
+        The first <b><u>FL</u></b>ow-based <b><u>U</u></b> policy for <b><u>X</u></b>-platform navigation.
+    </p>
+      <div style="margin-bottom: 40px;">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+          <iframe src="https://www.youtube.com/embed/cY6tFvKgTjo"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                  allowfullscreen 
+                  loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>    
+  </section>
+  <hr>
+  <section class="section" id="real-world-demo"  style="scroll-margin-top: 4rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width has-text-centered">
+  
+          <h2 class="title is-3">
+            <span class="icon"><i class="fa fa-street-view"></i></span>&thinsp; Real-World Demonstrations
+          </h2>
+          <p style="margin-bottom: 2em;">
+            Testing our method in real-world environments.
+          </p>
+  
+          <!-- Humanoid Robot Demos -->
+          <h3 class="title is-4" style="text-align: left;">
+            <span class="icon"><i class="fas fa-robot"></i></span>&nbsp; Humanoid Robot Navigation
+          </h3>
+          <div style="margin-bottom: 40px;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+              <iframe src="https://www.youtube.com/embed/9tjQ2NzPxpk" 
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                      allowfullscreen 
+                      loading="lazy">
+              </iframe>
+            </div>
+          </div>
+          
+          <!-- Quaruped Robot Demos -->
+          <h3 class="title is-4" style="text-align: left;">
+            <span class="icon"><i class="fa fa-dog"></i></span>&nbsp; Quadrupedal Robot Navigation
+          </h3>
+
+          <div style="margin-bottom: 40px;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+              <iframe src="https://www.youtube.com/embed/AtaEYmiu9N8" 
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                      allowfullscreen 
+                      loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Wheeled Robot Demos -->
+          <h3 class="title is-4" style="text-align: left;">
+            <span class="icon"><i class="fas fa-truck-monster"></i></span>&nbsp; Wheeled Robot Navigation
+          </h3>
+
+          <div style="margin-bottom: 40px;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+              <iframe src="https://www.youtube.com/embed/ABWJnzTRKF8" 
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                      allowfullscreen 
+                      loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <br/>
+
+  <section class="section" id="videos"  style="scroll-margin-top: 4rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width has-text-centered">
+  
+          <!-- Section Title -->
+          <h2 class="title is-3">
+            <span class="icon"><i class="fa fa-video"></i></span>&thinsp; Simulation Demonstrations
+          </h2>
+          <p style="margin-bottom: 2em;">
+            Evaluating our method on fundamental navigation tasks in dynamic scenarios via our proposed benchmark <strong><em>DynBench</em></strong>.
+          </p>
+  
+          <!-- Category 1 Demos -->
+          <h3 class="title is-4" style="text-align: left;">
+            <span class="icon"><i class="fas fa-crosshairs"></i></span>
+            <span class="icon"><i class="fas fa-person-walking"></i></span>
+            &nbsp; Dynamic PointNav
+          </h3>
+
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-warehouse"></i></span>&nbsp; <b>Warehouse</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynpointgoal_warehouse_rf_fps_0.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-hospital"></i></span>&nbsp; <b>Hospital</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynpointgoal_hospital_rf_fps_5.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-building"></i></span>&nbsp; <b>Office</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynpointgoal_office_rf_fps_95.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 60px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-road"></i></span>&nbsp; <b>Jetracer</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynpointgoal_jetracer_rf_fps_1.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <!-- Category 2 Demos -->
+          <h3 class="title is-4" style="text-align: left;">
+            <span class="icon"><i class="fa fa-route"></i></span>
+            <span class="icon"><i class="fas fa-users"></i></span>
+            &nbsp; SocialNav
+          </h3>
+
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-warehouse"></i></span>&nbsp; <b>Warehouse</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/socialnav_warehouse_rf_fps_10.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-hospital"></i></span>&nbsp; <b>Hospital</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/socialnav_hospital_rf_fps_0.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-building"></i></span>&nbsp; <b>Office</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/socialnav_office_rf_fps_0.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 60px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-road"></i></span>&nbsp; <b>Jetracer</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/socialnav_jetracer_rf_fps_2.mp4" type="video/mp4"/>
+            </video>
+          </div>
+
+          <!-- Category 3 Demos -->
+          <h3 class="title is-4" style="text-align: left;">
+            <span class="icon"><i class="fa fa-maximize"></i></span>
+            <span class="icon"><i class="fas fa-users"></i></span>
+            &nbsp; Dynamic Exploration
+          </h3>
+
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-warehouse"></i></span>&nbsp; <b>Warehouse</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynnogoal_warehouse_rf_fps_5.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-hospital"></i></span>&nbsp; <b>Hospital</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynnogoal_hospital_rf_fps_1.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 40px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-building"></i></span>&nbsp; <b>Office</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynnogoal_office_rf_fps_1.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+          <div style="margin-bottom: 60px;">
+            <h4 class="subtitle is-5" style="text-align: left;">
+              <span class="icon"><i class="fas fa-road"></i></span>&nbsp; <b>Jetracer</b>
+            </h4>
+            <video controls style="width: 100%; border-radius: 10px;" autoplay muted loop loading="lazy">
+              <source src="./static/videos/dynnogoal_jetracer_rf_fps_1.mp4" type="video/mp4"/>
+            </video>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+    <section class="section" id="abstract"  style="scroll-margin-top: 4rem;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full-width has-text-centered">
+          <h2 class="title is-3">
+            <span class="icon"><i class="fa fa-thumbtack"></i></span>&thinsp; Abstract
+          </h2>
+          <div class="content has-text-justified" style="padding-top: 0px">
+            <p>
+              Autonomous navigation requires a broad spectrum of skills, from static goal-reaching to dynamic social traversal, yet evaluation remains fragmented across disparate protocols. We introduce <strong><em>DynBench</em></strong>, a dynamic navigation benchmark featuring physically valid crowd simulation. Combined with existing static protocols, it supports comprehensive evaluation across six fundamental navigation tasks. Within this framework, we propose <strong><em>FLUX</em></strong>, the first flow-based unified navigation policy. By linearizing probability flow, <strong><em>FLUX</em></strong> replaces iterative denoising with straight-line trajectories, improving per-step inference efficiency by 47% over prior flow-based methods and 29% over diffusion-based ones. Following a static-to-dynamic curriculum, <strong><em>FLUX</em></strong> initially establishes geometric priors and is subsequently refined through reinforcement learning in dynamic social environments. This regime not only strengthens socially-aware navigation but also enhances static task robustness by capturing recovery behaviors through stochastic action distributions. <strong><em>FLUX</em></strong> achieves state-of-the-art performance across all tasks and demonstrates zero-shot sim-to-real transfer on wheeled, quadrupedal, and humanoid platforms without any fine-tuning.
+            </p>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="margin-top: -100px;"></section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class=" column is-full-width has-text-centered">
+        <h2 class="title is-3">
+          <span class="icon"><i class="fa fa-lightbulb"></i></span>&thinsp; Overview
+        </h2>
+        <img src="./static/images/compressed/v2_teaser_02.png" />
+        <div class="content has-text-justified" style="padding-top: 0px">
+          <p>
+            <strong>Fig. 1. <strong><em>FLUX</em></strong> : A Flow-Based Unified Policy for Cross-Embodiment Navigation.</strong> Our static-to-dynamic training curriculum enables efficient, socially-aware navigation, which transfers zero-shot across three heterogeneous platforms in the real world without platform-specific fine-tuning. 
+          </p>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section" style="margin-top: -50px;"></section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class=" column is-full-width has-text-centered">
+        <h2 class="title is-3">
+          <span class="icon"><i class="fa fa-rocket"></i></span>&thinsp; Framework
+        </h2>
+        <img src="./static/images/compressed/v7_overview_02.png" loading="lazy"/>
+        <div class="content has-text-justified" style="padding-top: 0px">
+          <p>
+            <strong>Fig. 2. Overview of <strong><em>FLUX</em></strong> framework.</strong> 
+            <strong><em>FLUX</em></strong> follows a static-to-dynamic training paradigm. 
+            Stage 1 (Top): Given egocentric visual observations and a goal, 
+            the flow policy head is pre-trained via imitation learning on static expert trajectories.
+            It generates diverse candidate paths, which are evaluated by the critic head. 
+            Stage 2 (Bottom): The framework is post-training using Group Relative Policy Optimization via on-policy rollouts. 
+            This stage optimizes for both goal-reaching efficiency and social compliance in dynamic environments.
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section" id="quant-results"  style="scroll-margin-top: 4rem;">
+    <div class="container is-max-desktop">
+      
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+            <h3 class="title is-3">
+              <span class="icon"><i class="fas fa-calculator"></i></span>&thinsp; Quantitative Results
+            </h3>
+            <p style="text-align: left; line-height: 1.6;">
+              <b>Metrics:</b> <br/>
+              SR <i class="fa fa-arrow-up" style="font-size:0.7em;"></i> (Success Rate) <b>/</b> 
+              SPL <i class="fa fa-arrow-up" style="font-size:0.7em;"></i> (Success weighted by Path Length) <b>/</b>  
+              ET <i class="fa fa-arrow-up" style="font-size:0.7em;"></i> (Exploration Time) <b>/</b>  
+              EA <i class="fa fa-arrow-up" style="font-size:0.7em;"></i> (Exploration Area)<br/>
+              S-TL <i class="fa fa-arrow-down" style="font-size:0.7em;"></i> (Success Time Length) <b>/</b>  
+              Coll. <i class="fa fa-arrow-down" style="font-size:0.7em;"></i> (Collision) <b>/</b>  
+              SC <i class="fa fa-arrow-down" style="font-size:0.7em;"></i> (Safety Cost) <b>/</b>  
+              MinDist. <i class="fa fa-arrow-up" style="font-size:0.7em;"></i> (Minimum Distance).
+            </p>       
+            <br/>
+            <div class="table-container" style="overflow-x: auto;">
+              <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="font-size: 0.8rem;">
+                <thead>
+                  <tr>
+                    <!-- 第一层表头：Methods + Static Scenes + Dynamic Scenes -->
+                    <th rowspan="3">Methods</th>
+                    <th colspan="6">
+                      <img src="./static/icons/sta_scene.png" width="20px" loading="lazy"> <b>Static Scenes</b>
+                    </th>
+                    <th colspan="8">
+                      <img src="./static/icons/dyn_scene.png" width="20px" loading="lazy"> <b>Dynamic Scenes</b>
+                    </th>
+                  </tr>
+                  <tr>
+                    <!-- 第二层表头：具体任务 -->
+                    <th colspan="2">PointNav</th>
+                    <th colspan="2">Exploration</th>
+                    <th colspan="2">ImageNav</th>
+                    <th colspan="2">Dyn. PointNav</th>
+                    <th colspan="2">Dyn. Exploration</th>
+                    <th colspan="4">SocialNav</th>
+                  </tr>
+                  <tr>
+                    <th>SR <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>SPL <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>ET <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>EA <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>SR <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>SPL <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>SR <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>S-TL <i class="fa fa-arrow-down" style="font-size:0.7em;"></i></th>
+                    <th>ET <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>EA <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>SR <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                    <th>Coll <i class="fa fa-arrow-down" style="font-size:0.7em;"></i></th>
+                    <th>SC <i class="fa fa-arrow-down" style="font-size:0.7em;"></i></th>
+                    <th>MinDist <i class="fa fa-arrow-up" style="font-size:0.7em;"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 传统规划方法 -->
+                  <tr style="background-color: #f0f0f0; text-align: center;">
+                    <td colspan="15"><b>Traditional Planning Methods</b></td>
+                  </tr>
+                  <tr>
+                    <td>DWA</td>
+                    <td>33.5</td><td>32.4</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                    <td>38.2</td><td>18.5</td><td>-</td><td>-</td>
+                    <td>41.8</td><td>10</td><td>7.3</td><td>4.1</td>
+                  </tr>
+                  <tr>
+                    <td>FBE</td>
+                    <td>-</td><td>-</td><td>4.3</td><td>11.2</td><td>-</td><td>-</td>
+                    <td>-</td><td>-</td><td>20.3</td><td>39.5</td>
+                    <td>-</td><td>-</td><td>-</td><td>-</td>
+                  </tr>
+      
+                  <!-- 强化学习方法 -->
+                  <tr style="background-color: #f0f0f0; text-align: center;">
+                    <td colspan="15"><b>Reinforcement Learning Methods</b></td>
+                  </tr>
+                  <tr>
+                    <td>DD-PPO</td>
+                    <td>19.5</td><td>19.2</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                    <td>8.4</td><td>7.7</td><td>-</td><td>-</td>
+                    <td>1.5</td><td>18</td><td>4.3</td><td>3.4</td>
+                  </tr>
+                  <tr>
+                    <td>Falcon</td>
+                    <td>40.0</td><td>33.6</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                    <td>19.0</td><td>16.4</td><td>-</td><td>-</td>
+                    <td>13.8</td><td>17</td><td>4.2</td><td>3.6</td>
+                  </tr>
+      
+                  <!-- 混合模块化方法 -->
+                  <tr style="background-color: #f0f0f0; text-align: center;">
+                    <td colspan="15"><b>Hybrid Modular Methods</b></td>
+                  </tr>
+                  <tr>
+                    <td>iPlanner </td>
+                    <td>66.8</td><td>65.1</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                    <td>30.8</td><td>15.4</td><td>-</td><td>-</td>
+                    <td>35.3</td><td>13</td><td>6.3</td><td>4.3</td>
+                  </tr>
+                  <tr>
+                    <td>ViPlanner</td>
+                    <td>63.4</td><td>62.4</td><td>-</td><td>-</td><td>-</td><td>-</td>
+                    <td>27.5</td><td>17.2</td><td>-</td><td>-</td>
+                    <td>37.0</td><td>12</td><td>5.9</td><td>4.3</td>
+                  </tr>
+      
+                  <!-- 模仿学习方法 -->
+                  <tr style="background-color: #f0f0f0; text-align: center;">
+                    <td colspan="15"><b>Imitation Learning Methods</b></td>
+                  </tr>
+                  <tr>
+                    <td>GNM</td>
+                    <td>-</td><td>-</td><td>22.1</td><td>27.8</td><td>16.3</td><td>15.7</td>
+                    <td>-</td><td>-</td><td>29.7</td><td>65.5</td>
+                    <td>-</td><td>-</td><td>-</td><td>-</td>
+                  </tr>
+                  <tr>
+                    <td>ViNT</td>
+                    <td>-</td><td>-</td><td>24.4</td><td>36.2</td><td>12.6</td><td>11.8</td>
+                    <td>-</td><td>-</td><td>31.9</td><td>73.2</td>
+                    <td>-</td><td>-</td><td>-</td><td>-</td>
+                  </tr>
+      
+                  <!-- 生成式建模方法 -->
+                  <tr style="background-color: #f0f0f0; text-align: center;">
+                    <td colspan="15"><b>Generative Modeling Methods</b></td>
+                  </tr>
+                  <tr>
+                    <td>NoMaD</td>
+                    <td>-</td><td>-</td><td>35.5</td><td>62.5</td><td>8.5</td><td>7.6</td>
+                    <td>-</td><td>-</td><td>34.9</td><td>75.0</td>
+                    <td>-</td><td>-</td><td>-</td><td>-</td>
+                  </tr>
+                  <tr>
+                    <td>FlowNav</td>
+                    <td>-</td><td>-</td><td>36.0</td><td>64.1</td><td>9.2</td><td>8.5</td>
+                    <td>-</td><td>-</td><td>35.8</td><td>75.7</td>
+                    <td>-</td><td>-</td><td>-</td><td>-</td>
+                  </tr>
+                  <tr>
+                    <td>NavDP</td>
+                    <td>77.8</td><td>74.8</td><td>72.5</td><td>167.2</td><td>43.4</td><td>43.4</td>
+                    <td>38.7</td><td>31.9</td><td>43.6</td><td>93.7</td>
+                    <td>59.3</td><td>21</td><td>5.5</td><td>3.5</td>
+                  </tr>
+      
+                  <!-- 我们的方法（高亮） -->
+                  <tr style="background-color: #e5fff1; font-weight: bold;">
+                    <td><span style="color:#01B1A0;">Ours</span></td>
+                    <td>80.9</td><td>78.6</td><td>73.7</td><td>172.8</td><td>44.0</td><td>44.4</td>
+                    <td>42.4</td><td>20.6</td><td>55.1</td><td>128.7</td>
+                    <td>64.0</td><td>16</td><td>4.4</td><td>4.0</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="content has-text-justified" style="padding-top: 15px">
+                <p>
+                  <strong>Tab: Performance Comparison Across Six Fundamental Navigation Tasks.</strong> 
+                  This table presents quantitative comparisons of six core navigation tasks in both <b>static</b> and <b>dynamic</b> scenes,
+                  covering traditional planning, reinforcement learning, hybrid modular, imitation learning, and generative modeling methods.
+                  Our approach achieves <b>state-of-the-art</b> performance across all metrics, demonstrating superior effectiveness in both static and dynamic navigation scenarios.
+                  <br/>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <hr>
+  <br/>
+  <section class="section" id="Qualitative Results."  style="scroll-margin-top: 4rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width has-text-centered">
+          <h2 class="title is-3">
+            <span class="icon"><i class="fa fa-object-group"></i></span>&thinsp; Qualitative Results
+          </h2>
+          <br/>
+  
+          <!-- 案例1 -->
+          <figure style="margin-bottom: 40px;">
+            <img src="./static/images/compressed/v2_quatative_02.png" style="width: 100%; border-radius: 10px;" loading="lazy" />
+            <figcaption style="margin-top: 10px; text-align: justify;">
+              <strong>Qualitative analysis of generative navigation policies.</strong> Compared to prior methods, <strong><em>FLUX</em></strong> generates trajectories with higher safety in both static and dynamic obstacle avoidance.
+            </figcaption>
+          </figure>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
